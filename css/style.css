@@ -1,0 +1,4635 @@
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@400;500;600;700&display=swap");
+:root {
+  --black: #080808;
+  --panel: #121212;
+  --red: #ed1c24;
+  --white: #fff;
+  --muted: #a0a0a0;
+  --line: #2b2b2b;
+  --space: clamp(1.2rem, 5vw, 5rem);
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--white);
+  font:
+    15px/1.65 Manrope,
+    sans-serif;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+}
+img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+h1,
+h2,
+h3,
+.btn,
+.eyebrow {
+  font-family: "Chakra Petch", sans-serif;
+  text-transform: uppercase;
+  line-height: 0.95;
+}
+h1 {
+  font-size: clamp(4rem, 9vw, 8rem);
+  letter-spacing: -0.04em;
+  margin: 0.4em 0;
+}
+h2 {
+  font-size: clamp(2.4rem, 5vw, 4.7rem);
+  letter-spacing: -0.03em;
+}
+h3 {
+  font-size: 1.45rem;
+}
+p {
+  color: #bbb;
+}
+.announcement {
+  text-align: center;
+  background: var(--red);
+  padding: 0.4rem;
+  font: 700 0.75rem "Chakra Petch";
+  letter-spacing: 0.13em;
+}
+.site-header {
+  height: 82px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space);
+  background: #080808ed;
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(14px);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font: 800 1.25rem "Chakra Petch";
+  letter-spacing: 0.1em;
+}
+.logo img {
+  width: 44px;
+  height: 44px;
+}
+.logo small {
+  display: block;
+  font-size: 0.52rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+}
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+.site-nav > a,
+.dropdown summary {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #ccc;
+}
+.dropdown {
+  position: relative;
+}
+.dropdown summary {
+  cursor: pointer;
+  list-style: none;
+}
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+  min-width: 210px;
+  padding: 0.7rem;
+  background: #151515;
+  border: 1px solid #333;
+}
+.dropdown[open] .dropdown-menu {
+  display: grid;
+}
+.dropdown-menu a {
+  padding: 0.45rem;
+}
+.nav-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+.icon-btn {
+  background: #171717;
+  color: white;
+  border: 1px solid #333;
+  padding: 0.55rem 0.7rem;
+}
+.count {
+  background: var(--red);
+  border-radius: 1rem;
+  padding: 0.05rem 0.35rem;
+}
+.menu-btn {
+  display: none;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.85rem 1.2rem;
+  background: var(--red);
+  color: white;
+  border: 1px solid var(--red);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.btn:hover {
+  background: #ff353c;
+  transform: translateY(-2px);
+}
+.btn.secondary {
+  background: transparent;
+  border-color: #555;
+}
+.search-panel {
+  display: none;
+  position: fixed;
+  z-index: 29;
+  left: 0;
+  right: 0;
+  top: 113px;
+  padding: 1rem var(--space);
+  background: #121212;
+  border-bottom: 1px solid #444;
+}
+.search-panel.open {
+  display: flex;
+  gap: 0.7rem;
+}
+.search-panel input {
+  flex: 1;
+}
+.toast {
+  position: fixed;
+  z-index: 100;
+  right: 1rem;
+  top: 125px;
+  background: white;
+  color: #111;
+  border-left: 4px solid var(--red);
+  padding: 1rem;
+  box-shadow: 0 12px 35px #000;
+}
+.hero {
+  min-height: calc(100vh - 112px);
+  display: flex;
+  align-items: center;
+  padding: 5rem var(--space);
+  background:
+    linear-gradient(90deg, #080808f7 0%, #080808b8 48%, #08080820),
+    url("/images/banners/hero.jpg") center/cover;
+}
+.hero > div {
+  max-width: 720px;
+}
+.hero p {
+  font-size: 1.2rem;
+}
+.eyebrow {
+  color: var(--red);
+  letter-spacing: 0.17em;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+.actions {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.page-hero {
+  min-height: 48vh;
+  padding: 6rem var(--space) 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  background: radial-gradient(circle at 80% 20%, #41090b, transparent 32%);
+  border-bottom: 1px solid var(--line);
+}
+.page-hero h1 {
+  font-size: clamp(3.6rem, 7vw, 6.5rem);
+}
+section {
+  padding: clamp(4.5rem, 8vw, 8rem) var(--space);
+  border-bottom: 1px solid var(--line);
+}
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+}
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  background: var(--line);
+}
+.category-grid a {
+  min-height: 170px;
+  padding: 1.6rem;
+  background: var(--panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.category-grid a:hover {
+  background: #1d1d1d;
+}
+.category-grid span {
+  color: var(--red);
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.product-grid.list {
+  grid-template-columns: 1fr;
+}
+.product-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.product-card:hover {
+  border-color: #693034;
+  transform: translateY(-3px);
+}
+.product-card img {
+  height: 230px;
+  filter: saturate(0.7);
+  margin-bottom: 1rem;
+}
+.product-card small {
+  color: var(--red);
+  letter-spacing: 0.1em;
+}
+.product-card p {
+  font-size: 0.82rem;
+  flex: 1;
+}
+.price {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+.price del {
+  color: #777;
+  font-size: 0.75rem;
+}
+.badge {
+  position: absolute;
+  left: 1.5rem;
+  top: 1.5rem;
+  background: var(--red);
+  padding: 0.25rem 0.5rem;
+  font-size: 0.65rem;
+}
+.wish-btn {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  border: 0;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background: #080808dd;
+  color: white;
+  font-size: 1.2rem;
+}
+.card-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.card-actions .btn {
+  font-size: 0.72rem;
+  padding: 0.7rem;
+  flex: 1;
+}
+.promo {
+  margin: 0 var(--space);
+  background: linear-gradient(115deg, #310708, var(--red));
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  border: 0;
+}
+.promo h2 {
+  margin: 0.4rem 0;
+}
+.feature-grid,
+.setup-grid,
+.brand-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.feature,
+.setup,
+.brand {
+  padding: 2rem;
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+.feature {
+  border-top: 2px solid var(--red);
+}
+.brand {
+  text-align: center;
+  font: 700 1.4rem "Chakra Petch";
+  letter-spacing: 0.08em;
+}
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 7vw, 8rem);
+  align-items: center;
+}
+.story-img {
+  height: 500px;
+}
+.video-placeholder {
+  aspect-ratio: 16/9;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  background:
+    linear-gradient(#000a, #000a),
+    url("/images/banners/hero.jpg") center/cover;
+  border: 1px solid #444;
+}
+.newsletter,
+.contact-form {
+  display: grid;
+  gap: 1rem;
+}
+.newsletter-row {
+  display: flex;
+}
+.newsletter-row input {
+  min-width: 300px;
+}
+.field,
+label {
+  display: grid;
+  gap: 0.4rem;
+  color: #aaa;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.85rem;
+  background: #111;
+  color: white;
+  border: 1px solid #444;
+}
+.state {
+  padding: 4rem;
+  border: 1px dashed #555;
+  text-align: center;
+  color: #aaa;
+}
+.filters {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.filter-flags {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.filter-flags label {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.filter-flags input {
+  width: auto;
+}
+.result-bar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  background: #000d;
+  padding: 1rem;
+  place-items: center;
+}
+.modal.open {
+  display: grid;
+}
+.modal-card {
+  position: relative;
+  width: min(850px, 100%);
+  max-height: 90vh;
+  overflow: auto;
+  background: #151515;
+  padding: 2rem;
+  border: 1px solid #555;
+}
+.modal-card > button:first-child {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.modal-body {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+.modal-body img {
+  height: 350px;
+}
+.cart-layout {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr;
+  gap: 3rem;
+}
+.cart-line {
+  display: grid;
+  grid-template-columns: 110px 1fr auto;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid #333;
+}
+.cart-line img {
+  height: 100px;
+}
+.quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.quantity button {
+  background: #222;
+  color: white;
+  border: 1px solid #444;
+  width: 34px;
+  height: 34px;
+}
+.summary {
+  padding: 2rem;
+  background: var(--panel);
+  height: max-content;
+}
+.summary p {
+  display: flex;
+  justify-content: space-between;
+}
+.summary .btn {
+  width: 100%;
+  margin: 0.4rem 0;
+}
+.faq details {
+  padding: 1rem;
+  border-top: 1px solid #333;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+.email-frame {
+  width: min(700px, 100%);
+  margin: auto;
+  background: #080808;
+  border: 1px solid #333;
+}
+.email-frame.mobile {
+  max-width: 390px;
+}
+.email-frame > div {
+  padding: 2.5rem;
+}
+.email-frame > img {
+  height: 310px;
+}
+.preview-controls {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+.campaign-card {
+  background: var(--panel);
+  border: 1px solid #333;
+}
+.campaign-art {
+  min-height: 420px;
+  padding: 2rem;
+  background: radial-gradient(circle, #9b1015, transparent 34%), #090909;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+.campaign-art strong {
+  font: 800 8rem/0.8 "Chakra Petch";
+}
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+}
+.metric {
+  border-top: 2px solid var(--red);
+  padding-top: 1rem;
+}
+.metric b {
+  display: block;
+  font: 700 2rem "Chakra Petch";
+}
+.compare-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.compare-card {
+  padding: 1.5rem;
+  background: var(--panel);
+}
+.footer {
+  padding: 4rem var(--space) 2rem;
+  background: #101010;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr repeat(4, 1fr);
+  gap: 2rem;
+}
+.footer-grid > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+.footer a,
+.footer p,
+.footer span {
+  font-size: 0.8rem;
+  color: #888;
+}
+.legal {
+  border-top: 1px solid #333;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+}
+.hidden {
+  display: none !important;
+}
+.loadout-section {
+  background: linear-gradient(180deg, #080808, #0e0e0e);
+}
+.loadout-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1rem;
+}
+.loadout-card {
+  position: relative;
+  min-height: 650px;
+  overflow: hidden;
+  border: 1px solid #303030;
+  background: #111;
+}
+.loadout-card > img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  transition:
+    transform 0.65s ease,
+    filter 0.4s ease;
+  filter: saturate(0.7) brightness(0.7);
+}
+.loadout-card:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 12%,
+    #09090950 38%,
+    #080808fa 78%
+  );
+}
+.loadout-card:hover > img {
+  transform: scale(1.045);
+  filter: saturate(1) brightness(0.78);
+}
+.loadout-card.featured-loadout {
+  transform: translateY(-1.5rem);
+  border-color: #6d292c;
+}
+.loadout-card.featured-loadout:before {
+  content: "MOST POPULAR";
+  position: absolute;
+  z-index: 3;
+  right: 1rem;
+  top: 1rem;
+  background: #ed1c24;
+  padding: 0.35rem 0.65rem;
+  font: 700 0.7rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.loadout-overlay {
+  position: absolute;
+  z-index: 2;
+  inset: auto 0 0;
+  padding: 2rem;
+}
+.loadout-number {
+  color: #ed1c24;
+  font: 700 0.72rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.loadout-card h3 {
+  font-size: 2.2rem;
+  margin: 0.7rem 0;
+}
+.loadout-card p {
+  font-size: 0.85rem;
+}
+.loadout-card ul {
+  padding-left: 1rem;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+.loadout-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  margin: 1.2rem 0;
+}
+.loadout-total span {
+  font-size: 0.68rem;
+  color: #999;
+  text-transform: uppercase;
+}
+.loadout-total strong {
+  font: 700 1.5rem "Chakra Petch";
+}
+@media (max-width: 900px) {
+  .loadout-grid {
+    grid-template-columns: 1fr;
+  }
+  .loadout-card {
+    min-height: 600px;
+  }
+  .loadout-card.featured-loadout {
+    transform: none;
+  }
+}
+.logo img {
+  object-fit: contain;
+}
+.account-entry {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 5vw;
+  align-items: start;
+}
+.account-login,
+.sample-accounts {
+  background: #121212;
+  border: 1px solid #333;
+  padding: 2rem;
+}
+.account-login {
+  display: grid;
+  gap: 1rem;
+  position: sticky;
+  top: 120px;
+}
+.sample-accounts {
+  border-style: dashed;
+  border-color: #90363a;
+}
+.sample-accounts h4 {
+  color: #999;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  margin-top: 1.5rem;
+}
+.sample-accounts article {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.8rem 0;
+  border-top: 1px solid #333;
+}
+.sample-accounts article small {
+  display: block;
+  color: #888;
+  font-size: 0.68rem;
+}
+.sample-accounts article button {
+  background: #181818;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.5rem 0.7rem;
+}
+.admin-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+.admin-shell {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+}
+.admin-nav {
+  padding: 2rem 1rem 2rem var(--space);
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+}
+.admin-nav button {
+  background: transparent;
+  color: #999;
+  border: 0;
+  border-left: 2px solid transparent;
+  padding: 0.8rem;
+  text-align: left;
+  text-transform: uppercase;
+}
+.admin-nav button.active {
+  color: white;
+  background: #191919;
+  border-color: #ed1c24;
+}
+.admin-content {
+  padding: 3rem var(--space);
+  overflow: hidden;
+}
+.admin-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 2rem;
+}
+.demo-pill {
+  background: #301012;
+  color: #ffb4b7;
+  border: 1px solid #6b292c;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.65rem;
+}
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.admin-stats article {
+  background: #121212;
+  border: 1px solid #333;
+  border-top: 2px solid #ed1c24;
+  padding: 1.5rem;
+  display: flex;
+  min-height: 150px;
+  flex-direction: column;
+}
+.admin-stats strong {
+  font: 700 2.6rem "Chakra Petch";
+  margin: auto 0;
+}
+.admin-stats small,
+.admin-stats span {
+  color: #888;
+}
+.admin-table-wrap {
+  overflow: auto;
+}
+.admin-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+.admin-table th,
+.admin-table td {
+  padding: 0.8rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+.admin-table td:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+.admin-table td img {
+  width: 48px;
+  height: 48px;
+}
+.admin-table td small {
+  display: block;
+  color: #777;
+}
+.admin-table input {
+  width: 120px;
+}
+@media (max-width: 900px) {
+  .account-entry {
+    grid-template-columns: 1fr;
+  }
+  .account-login {
+    position: static;
+  }
+  .admin-shell {
+    grid-template-columns: 1fr;
+  }
+  .admin-nav {
+    padding: 1rem var(--space);
+    flex-direction: row;
+    overflow: auto;
+  }
+  .admin-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .sample-accounts article,
+  .admin-top,
+  .admin-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+}
+.admin-heading > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+.admin-tab {
+  color: white !important;
+  background: #321012;
+  border: 1px solid #7d2b2f;
+  padding: 0.5rem 0.75rem;
+}
+.admin-product-grid {
+  display: grid;
+  gap: 1rem;
+}
+.admin-product-editor {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  background: #121212;
+  border: 1px solid #303030;
+}
+.admin-product-media {
+  padding: 1rem;
+  border-right: 1px solid #303030;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.admin-product-media > img {
+  height: 190px;
+}
+.admin-product-fields {
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.8rem;
+}
+.editor-title {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: end;
+}
+.editor-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+.editor-row.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.editor-flags {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.editor-flags label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.editor-flags input {
+  width: auto;
+}
+.upload-btn {
+  padding: 0.6rem;
+  text-align: center;
+  background: #202020;
+  border: 1px solid #444;
+}
+.upload-btn input {
+  display: none;
+}
+@media (max-width: 800px) {
+  .admin-product-editor {
+    grid-template-columns: 1fr;
+  }
+  .editor-row,
+  .editor-row.three {
+    grid-template-columns: 1fr;
+  }
+}
+.category-section {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 10% 20%, #241012, transparent 27%), #080808;
+}
+.category-showcase {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 0.8rem;
+}
+.category-tile {
+  grid-column: span 3;
+  min-height: 270px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #303030;
+  background: #111;
+}
+.category-tile-1,
+.category-tile-2,
+.category-tile-3 {
+  grid-column: span 4;
+}
+.category-tile-4 {
+  grid-column: span 6;
+}
+.category-tile img {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  filter: grayscale(0.75) saturate(0.65) brightness(0.62);
+  transition: 0.65s;
+}
+.category-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #0001, #080808ee);
+}
+.category-index {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  color: #ff555a;
+  border: 1px solid #ffffff30;
+  padding: 0.3rem 0.5rem;
+}
+.category-copy {
+  position: absolute;
+  z-index: 2;
+  left: 1.25rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  transform: translateY(2rem);
+  transition: 0.45s;
+}
+.category-copy h3 {
+  font-size: 2.3rem;
+  margin: 0.4rem 0;
+}
+.category-copy p {
+  opacity: 0;
+  transition: 0.4s;
+}
+.category-copy b {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #ffffff40;
+  padding-top: 0.8rem;
+}
+.category-copy i {
+  color: #ed1c24;
+}
+.category-tile:hover img {
+  transform: scale(1.08);
+  filter: grayscale(0) saturate(1) brightness(0.75);
+}
+.category-tile:hover .category-copy {
+  transform: none;
+}
+.category-tile:hover .category-copy p {
+  opacity: 1;
+}
+.campaign-promo {
+  position: relative;
+  overflow: hidden;
+  margin: 0 var(--space);
+  padding: clamp(3rem, 7vw, 7rem);
+  background: radial-gradient(
+    circle at 78% 48%,
+    #f22930,
+    #a2090f 23%,
+    #360608 56%,
+    #0d0808 90%
+  );
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 5vw;
+  align-items: center;
+}
+.promo-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.13;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 55px 55px;
+  animation: grid-drift 15s linear infinite;
+}
+.promo-copy,
+.promo-side {
+  position: relative;
+}
+.promo-copy h2 {
+  font-size: clamp(4rem, 8vw, 8rem);
+  margin: 0.7rem 0;
+}
+.promo-kicker {
+  letter-spacing: 0.16em;
+  font: 700 0.75rem "Chakra Petch";
+}
+.live-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #ff4c52;
+  animation: live-pulse 1.8s infinite;
+}
+.promo-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin: 2rem 0;
+}
+.promo-side {
+  display: grid;
+  justify-items: center;
+  gap: 1.5rem;
+}
+.discount-core {
+  width: min(300px, 72vw);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(
+    circle at 35% 28%,
+    #ff656a,
+    #ed1c24 35%,
+    #7b070c 75%
+  );
+  box-shadow:
+    0 0 0 12px #ed1c2418,
+    0 0 90px #ed1c2460;
+  animation: core-float 4s ease-in-out infinite;
+}
+.discount-core strong {
+  font: 800 5.5rem/0.8 "Chakra Petch";
+}
+.discount-core b {
+  font: 800 1.7rem "Chakra Petch";
+}
+.discount-core i {
+  font-style: normal;
+}
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  background: #080808aa;
+}
+.countdown span {
+  text-align: center;
+  padding: 0.7rem;
+  border-right: 1px solid #ffffff20;
+}
+.countdown b,
+.countdown small {
+  display: block;
+}
+.countdown b {
+  font: 700 1.45rem "Chakra Petch";
+}
+.countdown small {
+  font-size: 0.55rem;
+  color: #999;
+}
+.promo-tags {
+  display: flex;
+  gap: 0.4rem;
+}
+.promo-tags span {
+  background: #08080890;
+  border: 1px solid #ffffff30;
+  padding: 0.3rem 0.5rem;
+  font-size: 0.6rem;
+}
+@keyframes grid-drift {
+  to {
+    background-position: 55px 55px;
+  }
+}
+@keyframes live-pulse {
+  70% {
+    box-shadow: 0 0 0 10px transparent;
+  }
+}
+@keyframes core-float {
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (max-width: 950px) {
+  .category-tile,
+  .category-tile-1,
+  .category-tile-2,
+  .category-tile-3,
+  .category-tile-4 {
+    grid-column: span 6;
+  }
+  .campaign-promo {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .category-tile,
+  .category-tile-1,
+  .category-tile-2,
+  .category-tile-3,
+  .category-tile-4 {
+    grid-column: 1/-1;
+    min-height: 330px;
+  }
+  .category-copy {
+    transform: none;
+  }
+  .category-copy p {
+    opacity: 1;
+  }
+  .campaign-promo {
+    margin: 0;
+    padding: 4rem 1.25rem;
+  }
+}
+
+.shop-hero {
+  min-height: 58vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  gap: 4rem;
+  padding-top: 7rem;
+  background:
+    linear-gradient(90deg, #080808f8 0%, #080808cf 55%, #08080860),
+    url("/images/products/components.jpg") center 45% / cover;
+}
+.shop-hero > div:first-child {
+  max-width: 760px;
+}
+.shop-hero h1 {
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  margin: 0.6rem 0;
+}
+.shop-hero > div > p:last-child {
+  font-size: 1.05rem;
+  max-width: 610px;
+}
+.shop-hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid #ffffff30;
+  background: #080808a8;
+  backdrop-filter: blur(12px);
+}
+.shop-hero-stats span {
+  padding: 1.25rem;
+  border-right: 1px solid #ffffff20;
+}
+.shop-hero-stats span:last-child {
+  border: 0;
+}
+.shop-hero-stats b,
+.shop-hero-stats small {
+  display: block;
+}
+.shop-hero-stats b {
+  font: 800 2rem "Chakra Petch";
+}
+.shop-hero-stats small {
+  color: #999;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.catalog-section {
+  padding-top: 0;
+  background: #0a0a0a;
+}
+.catalog-toolbar {
+  position: sticky;
+  top: 84px;
+  z-index: 15;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  margin: 0 calc(var(--pad) * -1);
+  padding: 1rem var(--pad);
+  background: #101010ec;
+  border-bottom: 1px solid #303030;
+  backdrop-filter: blur(16px);
+}
+.catalog-toolbar > div:first-of-type strong {
+  font: 700 1.5rem "Chakra Petch";
+}
+.catalog-toolbar > div:first-of-type span {
+  color: #888;
+}
+.toolbar-controls {
+  display: flex;
+  align-items: end;
+  gap: 1rem;
+}
+.toolbar-controls label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #888;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.toolbar-controls select {
+  min-width: 180px;
+  padding: 0.6rem;
+}
+.view-toggle {
+  display: flex;
+  border: 1px solid #3b3b3b;
+}
+.view-toggle button {
+  background: #111;
+  color: #888;
+  border: 0;
+  padding: 0.65rem 0.8rem;
+}
+.view-toggle button.active {
+  background: #2a2a2a;
+  color: white;
+}
+.mobile-filter-btn {
+  display: none;
+  background: #191919;
+  color: white;
+  border: 1px solid #444;
+  padding: 0.7rem;
+}
+.mobile-filter-btn b {
+  background: var(--red);
+  padding: 0.1rem 0.4rem;
+  margin-left: 0.4rem;
+}
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 2rem;
+  padding-top: 2rem;
+}
+.catalog-filters {
+  position: sticky;
+  top: 165px;
+  height: max-content;
+  max-height: calc(100vh - 185px);
+  overflow: auto;
+  background: #101010;
+  border: 1px solid #303030;
+  padding: 1.25rem;
+}
+.filter-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  border-bottom: 1px solid #303030;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+.filter-title h3 {
+  font-size: 2rem;
+  margin: 0.3rem 0;
+}
+.filter-title button {
+  display: none;
+  background: none;
+  color: #aaa;
+  border: 0;
+}
+.catalog-filters > label,
+.catalog-filters fieldset {
+  display: grid;
+  gap: 0.6rem;
+  border: 0;
+  border-bottom: 1px solid #292929;
+  padding: 0 0 1.25rem;
+  margin: 0 0 1.25rem;
+  color: #999;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.catalog-search span {
+  position: relative;
+}
+.catalog-search b {
+  position: absolute;
+  right: 0.7rem;
+  top: 0.6rem;
+  color: #777;
+}
+.catalog-filters fieldset legend {
+  font: 700 0.8rem "Chakra Petch";
+  color: #ddd;
+  margin-bottom: 0.7rem;
+}
+.catalog-filters fieldset > button {
+  display: flex;
+  justify-content: space-between;
+  background: transparent;
+  color: #aaa;
+  border: 0;
+  padding: 0.42rem 0;
+  text-align: left;
+}
+.catalog-filters fieldset > button:hover,
+.catalog-filters fieldset > button.selected {
+  color: white;
+}
+.catalog-filters fieldset > button.selected span:before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--red);
+  border-radius: 50%;
+  margin-right: 0.5rem;
+}
+.catalog-filters fieldset > button b {
+  font-size: 0.65rem;
+  background: #1d1d1d;
+  padding: 0.05rem 0.4rem;
+}
+.price-range {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0.4rem;
+  align-items: end;
+}
+.price-range label {
+  font-size: 0.55rem;
+}
+.price-range input {
+  padding: 0.65rem;
+}
+.filter-check {
+  display: flex !important;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.6rem !important;
+  color: #bbb !important;
+}
+.filter-check input {
+  width: auto;
+  accent-color: var(--red);
+}
+.clear-filters {
+  width: 100%;
+  background: transparent;
+  color: #aaa;
+  border: 1px solid #444;
+  padding: 0.7rem;
+  text-transform: uppercase;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+}
+.apply-filters {
+  display: none;
+  width: 100%;
+  margin-top: 0.6rem;
+}
+.active-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.2rem;
+}
+.active-filters > span {
+  color: #777;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.active-filters button {
+  background: #181818;
+  color: #ddd;
+  border: 1px solid #393939;
+  padding: 0.4rem 0.6rem;
+  font-size: 0.68rem;
+}
+.active-filters button b {
+  color: var(--red);
+  margin-left: 0.35rem;
+}
+.active-filters .clear-chip {
+  border: 0;
+  text-decoration: underline;
+  background: transparent;
+  color: #999;
+}
+.shop-product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.shop-product {
+  background: #121212;
+  border: 1px solid #2b2b2b;
+  position: relative;
+  overflow: hidden;
+  animation: tile-reveal 0.5s both;
+}
+.shop-product:hover {
+  border-color: #633034;
+  transform: translateY(-4px);
+  box-shadow: 0 20px 45px #0008;
+}
+.shop-product-visual {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  background: #0c0c0c;
+}
+.shop-product-visual > img {
+  height: 100%;
+  filter: saturate(0.75);
+  transition:
+    transform 0.55s ease,
+    filter 0.4s;
+}
+.shop-product:hover .shop-product-visual > img {
+  transform: scale(1.055);
+  filter: saturate(1);
+}
+.product-badges {
+  position: absolute;
+  left: 0.75rem;
+  top: 0.75rem;
+  display: flex;
+  gap: 0.35rem;
+}
+.product-badges span {
+  background: #0a0a0ae6;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  font: 700 0.62rem "Chakra Petch";
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.product-badges .sale-badge {
+  background: var(--red);
+}
+.shop-product .wish {
+  top: 0.75rem;
+  right: 0.75rem;
+}
+.shop-product .wish.saved {
+  color: #ff4c52;
+}
+.quick-view {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #080808e8;
+  text-align: center;
+  padding: 0.75rem;
+  font: 700 0.7rem "Chakra Petch";
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transform: translateY(100%);
+}
+.shop-product:hover .quick-view,
+.quick-view:focus {
+  transform: none;
+}
+.shop-product-body {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 265px;
+}
+.product-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--red);
+  font-size: 0.63rem;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+}
+.product-meta small {
+  color: #777;
+}
+.shop-product h3 {
+  font-size: 1.45rem;
+  margin: 0.65rem 0;
+}
+.shop-product-body > p {
+  font-size: 0.78rem;
+  line-height: 1.5;
+  flex: 1;
+}
+.product-status {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #999;
+  font-size: 0.65rem;
+  margin: 0.5rem 0;
+}
+.product-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #777;
+}
+.product-status i.in-stock {
+  background: #45ba72;
+}
+.product-status i.low-stock {
+  background: #e0a93e;
+}
+.product-status i.preorder {
+  background: #777;
+}
+.product-buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  border-top: 1px solid #303030;
+  padding-top: 0.9rem;
+}
+.product-buy b,
+.product-buy del {
+  display: block;
+}
+.product-buy b {
+  font: 700 1.35rem "Chakra Petch";
+}
+.product-buy del {
+  color: #777;
+  font-size: 0.65rem;
+}
+.product-buy button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--red);
+  border: 0;
+  color: white;
+  font-size: 1.4rem;
+}
+.product-buy button:disabled {
+  background: #333;
+  color: #777;
+}
+.shop-product-grid.list {
+  grid-template-columns: 1fr;
+}
+.shop-product-grid.list .shop-product {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+}
+.shop-product-grid.list .shop-product-visual {
+  height: 100%;
+  min-height: 230px;
+}
+.shop-product-grid.list .shop-product-body {
+  min-height: 230px;
+}
+.catalog-empty {
+  min-height: 480px;
+  border: 1px dashed #454545;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: radial-gradient(circle, #251012, transparent 45%);
+}
+.catalog-empty > b {
+  color: var(--red);
+  letter-spacing: 0.15em;
+}
+.catalog-empty h2 {
+  margin: 1rem 0;
+}
+.catalog-empty .btn {
+  margin: auto;
+}
+.catalog-skeleton {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.catalog-skeleton span {
+  height: 470px;
+  background: linear-gradient(90deg, #121212 25%, #1d1d1d 45%, #121212 65%);
+  background-size: 300% 100%;
+  animation: skeleton 1.5s infinite;
+}
+.load-more {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.load-more p {
+  font-size: 0.7rem;
+}
+.load-more progress {
+  display: block;
+  width: 240px;
+  height: 3px;
+  margin: 0.8rem auto 1.5rem;
+  border: 0;
+  background: #292929;
+}
+.load-more progress::-webkit-progress-bar {
+  background: #292929;
+}
+.load-more progress::-webkit-progress-value {
+  background: var(--red);
+}
+.load-more progress::-moz-progress-bar {
+  background: var(--red);
+}
+.filter-scrim {
+  display: none;
+}
+@keyframes skeleton {
+  to {
+    background-position: -150% 0;
+  }
+}
+@media (max-width: 1200px) {
+  .shop-product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 850px) {
+  .shop-hero {
+    grid-template-columns: 1fr;
+  }
+  .catalog-toolbar {
+    top: 70px;
+  }
+  .mobile-filter-btn {
+    display: block;
+  }
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .catalog-filters {
+    position: fixed;
+    z-index: 51;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: min(360px, 90vw);
+    max-height: none;
+    transform: translateX(-105%);
+    transition: transform 0.35s ease;
+    padding: 1.5rem;
+  }
+  .catalog-filters.open {
+    transform: none;
+  }
+  .filter-title button,
+  .apply-filters {
+    display: block;
+  }
+  .filter-scrim {
+    display: block;
+    position: fixed;
+    z-index: 50;
+    inset: 0;
+    background: #000b;
+    border: 0;
+  }
+  .catalog-skeleton {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .shop-hero-stats {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .catalog-toolbar {
+    align-items: flex-end;
+    gap: 0.7rem;
+  }
+  .catalog-toolbar > div:first-of-type {
+    display: none;
+  }
+  .toolbar-controls {
+    flex: 1;
+    justify-content: flex-end;
+  }
+  .toolbar-controls label {
+    display: block;
+  }
+  .toolbar-controls label > span {
+    display: none;
+  }
+  .toolbar-controls select {
+    min-width: 0;
+    width: 145px;
+  }
+  .view-toggle {
+    display: none;
+  }
+  .shop-product-grid,
+  .catalog-skeleton {
+    grid-template-columns: 1fr;
+  }
+  .shop-product-visual {
+    height: 330px;
+  }
+  .shop-product-grid.list .shop-product {
+    display: block;
+  }
+  .active-filters > span {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .shop-product,
+  .catalog-skeleton span {
+    animation: none;
+  }
+  .shop-product,
+  .shop-product-visual > img,
+  .quick-view,
+  .catalog-filters {
+    transition: none;
+  }
+}
+
+/* Typography and alignment refinement */
+body {
+  font-family: "Manrope", sans-serif;
+  letter-spacing: -0.005em;
+}
+h1,
+h2,
+h3,
+h4,
+.btn,
+.eyebrow,
+.logo {
+  font-family: "Chakra Petch", sans-serif;
+}
+h1,
+h2,
+h3,
+h4 {
+  text-wrap: balance;
+}
+h1 {
+  line-height: 0.9;
+  letter-spacing: -0.055em;
+}
+h2 {
+  line-height: 0.96;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.35em;
+}
+h3 {
+  line-height: 1.08;
+  letter-spacing: -0.018em;
+  margin: 0 0 0.5em;
+}
+p {
+  margin: 0 0 1em;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5rem;
+  line-height: 1.2;
+}
+.eyebrow:before {
+  content: "";
+  width: 18px;
+  height: 1px;
+  background: currentColor;
+  margin-right: 0.6rem;
+}
+.btn {
+  min-height: 44px;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+}
+.logo {
+  line-height: 1;
+  align-items: center;
+}
+.logo span {
+  display: block;
+}
+.logo small {
+  line-height: 1.2;
+}
+.site-header,
+header {
+  align-items: center;
+}
+.site-nav,
+nav {
+  align-items: center;
+}
+.nav-actions {
+  align-items: center;
+}
+.section-head {
+  align-items: flex-end;
+}
+.section-head > div {
+  min-width: 0;
+}
+.section-head h2 {
+  margin: 0.55rem 0 0;
+}
+.section-head > p {
+  margin: 0 0 0.25rem;
+  line-height: 1.7;
+}
+.actions {
+  align-items: center;
+}
+.split > * {
+  min-width: 0;
+}
+.feature,
+.setup,
+.brand,
+.shop-product,
+.product-card {
+  height: 100%;
+}
+.feature h3,
+.setup h3 {
+  margin-top: 1.5rem;
+}
+.product-meta {
+  align-items: center;
+}
+.shop-product h3 {
+  min-height: 3.1rem;
+  display: flex;
+  align-items: flex-start;
+}
+.shop-product-body > p {
+  margin-bottom: 1rem;
+}
+.product-buy {
+  min-height: 62px;
+  align-items: center;
+}
+.catalog-toolbar {
+  min-height: 70px;
+}
+.toolbar-controls,
+.view-toggle {
+  align-items: center;
+}
+.catalog-filters label {
+  align-content: start;
+}
+.catalog-filters input,
+.catalog-filters select {
+  min-height: 42px;
+}
+.filter-title {
+  align-items: center;
+}
+.filter-title h3 {
+  margin: 0.35rem 0 0;
+}
+.active-filters {
+  min-height: 34px;
+}
+.category-heading {
+  align-items: flex-end;
+}
+.category-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.category-copy h3 {
+  min-height: 2.4rem;
+  display: flex;
+  align-items: flex-end;
+}
+.campaign-promo {
+  align-items: center;
+}
+.promo-copy,
+.promo-side {
+  align-self: center;
+}
+.promo-actions {
+  align-items: center;
+}
+.admin-heading {
+  align-items: flex-end;
+}
+.admin-product-fields label {
+  align-content: start;
+}
+.editor-title {
+  align-items: end;
+}
+.contact-form label,
+.newsletter label {
+  align-content: start;
+}
+.contact-form .btn {
+  justify-self: start;
+}
+.summary h3 {
+  margin-bottom: 1rem;
+}
+.footer-grid {
+  align-items: start;
+}
+.footer-grid > div {
+  min-width: 0;
+}
+.footer-grid .logo {
+  margin-bottom: 0.7rem;
+}
+.footer-grid b,
+.footer-grid strong {
+  min-height: 1.8rem;
+  display: flex;
+  align-items: center;
+}
+.newsletter > div,
+.newsletter-row {
+  align-items: stretch;
+}
+.newsletter .btn {
+  flex: none;
+}
+@media (max-width: 900px) {
+  .section-head,
+  .category-heading,
+  .admin-heading {
+    align-items: flex-start;
+  }
+  .shop-product h3 {
+    min-height: auto;
+  }
+  .footer-grid {
+    align-items: start;
+  }
+}
+@media (max-width: 600px) {
+  h1 {
+    letter-spacing: -0.04em;
+  }
+  .section-head {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .section-head > p {
+    max-width: none;
+  }
+  .actions,
+  .promo-actions {
+    width: 100%;
+  }
+  .actions .btn,
+  .promo-actions .btn {
+    flex: 1;
+  }
+  .catalog-toolbar {
+    min-height: 64px;
+  }
+  .contact-form .btn {
+    justify-self: stretch;
+  }
+  .newsletter .btn {
+    width: 100%;
+  }
+}
+
+.arcade-hero {
+  min-height: 78vh;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: end;
+  gap: 4rem;
+  background:
+    radial-gradient(circle at 65% 45%, #45080b 0, transparent 30%),
+    linear-gradient(145deg, #111 0, #050505 65%);
+}
+.arcade-hero:before,
+.arcade-hero:after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+.arcade-hero:before {
+  inset: 1.5rem;
+  border: 1px solid #ffffff22;
+  clip-path: polygon(
+    0 0,
+    28% 0,
+    28% 2px,
+    72% 2px,
+    72% 0,
+    100% 0,
+    100% 100%,
+    72% 100%,
+    72% calc(100% - 2px),
+    28% calc(100% - 2px),
+    28% 100%,
+    0 100%
+  );
+}
+.arcade-hero:after {
+  width: 480px;
+  height: 480px;
+  right: 5%;
+  top: 12%;
+  border: 1px solid #ed1c2435;
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 40px #ed1c2408,
+    0 0 0 90px #ed1c2405;
+  animation: arcade-orbit 12s linear infinite;
+}
+.arcade-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.12;
+  background-image:
+    linear-gradient(#ed1c24 1px, transparent 1px),
+    linear-gradient(90deg, #ed1c24 1px, transparent 1px);
+  background-size: 44px 44px;
+  perspective: 400px;
+  mask-image: linear-gradient(to bottom, transparent, #000);
+}
+.arcade-hero-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 850px;
+}
+.arcade-status {
+  display: flex;
+  justify-content: space-between;
+  border-block: 1px solid #ffffff25;
+  padding: 0.55rem 0;
+  margin-bottom: 2rem;
+  color: #999;
+  font: 600 0.63rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.arcade-status b {
+  color: #ed1c24;
+}
+.arcade-hero h1 {
+  font-size: clamp(4.8rem, 10vw, 9.5rem);
+  margin: 0.8rem 0;
+}
+.arcade-hero-copy > p {
+  font-size: 1.05rem;
+  max-width: 640px;
+}
+.arcade-score {
+  position: relative;
+  z-index: 2;
+  text-align: right;
+  border-right: 3px solid var(--red);
+  padding-right: 1.5rem;
+  margin-bottom: 1rem;
+}
+.arcade-score span,
+.arcade-score small,
+.arcade-score strong {
+  display: block;
+}
+.arcade-score span {
+  color: #888;
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.18em;
+}
+.arcade-score strong {
+  font: 700 7rem/0.9 "Chakra Petch";
+  text-shadow: 5px 5px 0 #4a0c0f;
+}
+.arcade-score small {
+  color: var(--red);
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+}
+.arcade-section {
+  background: #090909;
+  position: relative;
+}
+.arcade-marquee {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #3c3c3c;
+  background: #111;
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: inset 0 0 30px #000;
+}
+.arcade-marquee > span {
+  font: 700 1rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.arcade-marquee > div {
+  color: #888;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}
+.arcade-marquee b {
+  color: #52c878;
+  margin-right: 0.5rem;
+  animation: arcade-blink 1.6s steps(2) infinite;
+}
+.arcade-console {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  border: 1px solid #373737;
+  background: #0c0c0c;
+  box-shadow: 0 30px 80px #000;
+}
+.module-select {
+  padding: 1rem;
+  background: #111;
+  border-right: 1px solid #353535;
+  display: grid;
+  gap: 0.4rem;
+}
+.module-select button {
+  position: relative;
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 58px;
+  padding: 0.7rem;
+  background: #0c0c0c;
+  border: 1px solid #292929;
+  color: #888;
+  text-align: left;
+}
+.module-select button:hover {
+  border-color: #653034;
+  color: white;
+  transform: translateX(3px);
+}
+.module-select button.active {
+  color: white;
+  background: linear-gradient(90deg, #3c0b0d, #171111);
+  border-color: #a22a30;
+  box-shadow: inset 3px 0 var(--red);
+}
+.module-select button span {
+  font: 600 0.62rem "Chakra Petch";
+  color: #ed1c24;
+}
+.module-select button b {
+  font: 600 0.78rem "Chakra Petch";
+  text-transform: uppercase;
+}
+.module-select button i {
+  font-style: normal;
+  font: 700 1.2rem "Chakra Petch";
+  opacity: 0.25;
+}
+.module-select button.active i {
+  opacity: 1;
+  color: #ed1c24;
+}
+.module-screen {
+  position: relative;
+  overflow: hidden;
+  min-height: 560px;
+  padding: clamp(2rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 70% 30%, #34090b, transparent 35%), #080808;
+}
+.screen-scanlines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.15;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #fff 4px);
+  animation: scan-move 8s linear infinite;
+}
+.module-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ffffff25;
+  padding-bottom: 0.6rem;
+  margin-bottom: 2rem;
+  color: #777;
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.module-header b {
+  color: #52c878;
+}
+.module-screen > small {
+  color: var(--red);
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.18em;
+}
+.module-screen h2 {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  margin: 0.5rem 0;
+}
+.module-screen > p {
+  max-width: 680px;
+  font-size: 1rem;
+}
+.module-readout {
+  position: absolute;
+  right: 3rem;
+  bottom: 3rem;
+  text-align: right;
+}
+.module-readout strong,
+.module-readout span {
+  display: block;
+}
+.module-readout strong {
+  font: 700 4rem/0.9 "Chakra Petch";
+  color: #ed1c24;
+}
+.module-readout span {
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: #888;
+}
+.module-screen > .btn {
+  align-self: flex-start;
+  margin-top: 1.5rem;
+}
+.power-meter {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 1.5rem;
+}
+.power-meter i {
+  width: 45px;
+  height: 5px;
+  background: #ed1c24;
+  animation: power-up 0.5s both;
+}
+.power-meter i:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.power-meter i:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.power-meter i:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.power-meter i:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.arcade-achievements {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #333;
+  margin-top: 1rem;
+}
+.arcade-achievements article {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  background: #101010;
+  padding: 1.2rem;
+}
+.arcade-achievements article > span {
+  font: 700 1.5rem "Chakra Petch";
+  color: #ed1c24;
+}
+.arcade-achievements b,
+.arcade-achievements small {
+  display: block;
+}
+.arcade-achievements b {
+  font: 600 0.7rem "Chakra Petch";
+}
+.arcade-achievements small {
+  font-size: 0.57rem;
+  color: #777;
+}
+.arcade-achievements i {
+  font-style: normal;
+  color: #52c878;
+  font-size: 0.55rem;
+}
+.versus-section {
+  position: relative;
+  background:
+    radial-gradient(circle at 50% 10%, #33080a, transparent 26%), #070707;
+}
+.versus-section:before {
+  content: "VS";
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  font: 700 clamp(10rem, 24vw, 25rem) / 1 "Chakra Petch";
+  color: #ffffff03;
+  pointer-events: none;
+}
+.versus-heading {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.versus-heading > div {
+  max-width: 750px;
+}
+.versus-heading label {
+  min-width: 260px;
+  color: #999;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.fighter-select {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.fighter-select article {
+  position: relative;
+  min-height: 430px;
+  background: #101010;
+  border: 1px dashed #484848;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+.fighter-select article.locked {
+  border-style: solid;
+  border-color: #703035;
+  box-shadow: inset 0 -80px 80px #22090a;
+}
+.player-label {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  top: 1rem;
+  background: var(--red);
+  padding: 0.3rem 0.6rem;
+  font: 700 0.65rem "Chakra Petch";
+  letter-spacing: 0.1em;
+}
+.fighter-select img {
+  height: 240px;
+  margin-bottom: 1rem;
+  filter: saturate(0.8);
+}
+.fighter-empty {
+  height: 240px;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  border: 1px solid #292929;
+  margin-bottom: 1rem;
+  background: repeating-linear-gradient(135deg, #111 0 10px, #0c0c0c 10px 20px);
+}
+.fighter-empty strong {
+  font: 700 6rem/0.8 "Chakra Petch";
+  color: #292929;
+}
+.fighter-empty span {
+  font: 600 0.6rem "Chakra Petch";
+  color: #555;
+  letter-spacing: 0.15em;
+}
+.fighter-select label {
+  margin-top: auto;
+  color: #888;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.fighter-name {
+  padding-top: 1rem;
+}
+.fighter-name small {
+  color: var(--red);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+.fighter-name h3 {
+  margin: 0.3rem 0;
+}
+.battle-results {
+  margin-top: 1rem;
+  border: 1px solid #3a3a3a;
+  background: #0c0c0c;
+}
+.battle-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #333;
+}
+.battle-title span {
+  font: 700 0.75rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.battle-title button {
+  background: transparent;
+  color: #999;
+  border: 1px solid #444;
+  padding: 0.5rem;
+}
+.battle-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.battle-grid article {
+  padding: 1.5rem;
+  border-right: 1px solid #333;
+}
+.battle-grid article:last-child {
+  border: 0;
+}
+.battle-grid article > span {
+  color: var(--red);
+  font: 700 0.7rem "Chakra Petch";
+}
+.battle-grid article > div {
+  border-top: 1px solid #2f2f2f;
+  padding: 0.7rem 0;
+}
+.battle-grid small,
+.battle-grid b {
+  display: block;
+}
+.battle-grid small {
+  color: #777;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.battle-grid p {
+  font-size: 0.7rem;
+  margin: 0.25rem 0;
+}
+.arcade-cta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #ed1c24, #7d090d);
+}
+.arcade-cta span {
+  font: 700 0.7rem "Chakra Petch";
+  letter-spacing: 0.17em;
+}
+.arcade-cta h2 {
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  margin: 0.4rem 0;
+}
+.arcade-cta-actions {
+  display: flex;
+  gap: 0.7rem;
+}
+.arcade-cta .btn {
+  background: #080808;
+  border-color: #080808;
+}
+.arcade-cta .btn.ghost {
+  background: transparent;
+  border-color: #ffffff80;
+}
+@keyframes arcade-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes arcade-blink {
+  50% {
+    opacity: 0.2;
+  }
+}
+@keyframes scan-move {
+  to {
+    background-position: 0 100px;
+  }
+}
+@keyframes power-up {
+  from {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+}
+@media (max-width: 1050px) {
+  .arcade-console {
+    grid-template-columns: 270px 1fr;
+  }
+  .arcade-achievements {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .module-readout {
+    position: static;
+    text-align: left;
+    margin-top: 1rem;
+  }
+  .fighter-select {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+@media (max-width: 750px) {
+  .arcade-hero {
+    grid-template-columns: 1fr;
+  }
+  .arcade-score {
+    display: none;
+  }
+  .arcade-console {
+    grid-template-columns: 1fr;
+  }
+  .module-select {
+    grid-template-columns: 1fr 1fr;
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+  .module-select button {
+    grid-template-columns: 55px 1fr;
+  }
+  .module-select button i {
+    display: none;
+  }
+  .module-screen {
+    min-height: 500px;
+  }
+  .arcade-achievements {
+    grid-template-columns: 1fr;
+  }
+  .versus-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .versus-heading label {
+    width: 100%;
+    min-width: 0;
+  }
+  .fighter-select,
+  .battle-grid {
+    grid-template-columns: 1fr;
+  }
+  .fighter-select article {
+    min-height: 390px;
+  }
+  .battle-grid article {
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+  .arcade-cta {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .arcade-cta-actions {
+    width: 100%;
+  }
+  .arcade-cta-actions .btn {
+    flex: 1;
+  }
+}
+@media (max-width: 480px) {
+  .module-select {
+    grid-template-columns: 1fr;
+  }
+  .arcade-hero:before {
+    inset: 0.6rem;
+  }
+  .arcade-status {
+    font-size: 0.5rem;
+  }
+  .arcade-cta-actions {
+    flex-direction: column;
+  }
+  .fighter-select img,
+  .fighter-empty {
+    height: 210px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .arcade-hero:after,
+  .arcade-marquee b,
+  .screen-scanlines,
+  .power-meter i {
+    animation: none;
+  }
+}
+
+.about-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 82vh;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 4rem;
+  background:
+    radial-gradient(circle at 75% 45%, #47090c 0, transparent 28%),
+    linear-gradient(145deg, #101010, #050505);
+}
+.about-hero-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.11;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+.about-wordmark {
+  position: absolute;
+  z-index: -1;
+  left: -0.04em;
+  bottom: -0.2em;
+  font: 700 45vw/0.8 "Chakra Petch";
+  color: #ffffff025;
+  letter-spacing: -0.12em;
+}
+.about-hero-copy {
+  max-width: 760px;
+}
+.about-hero h1 {
+  font-size: clamp(4.8rem, 9vw, 9rem);
+  margin: 0.7rem 0;
+}
+.about-hero-copy > p {
+  font-size: 1.05rem;
+  max-width: 650px;
+}
+.about-hero-actions {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 2rem;
+}
+.about-logo-stage {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 500px;
+}
+.about-logo-stage img {
+  position: relative;
+  z-index: 2;
+  width: min(340px, 70vw);
+  height: 370px;
+  object-fit: contain;
+  filter: drop-shadow(0 35px 35px #000);
+  animation: cube-float 5s ease-in-out infinite;
+}
+.about-logo-stage > span {
+  position: absolute;
+  bottom: 1rem;
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.2em;
+  color: #888;
+}
+.logo-rings,
+.logo-rings:before,
+.logo-rings:after {
+  position: absolute;
+  border: 1px solid #ed1c2440;
+  border-radius: 50%;
+  width: 400px;
+  aspect-ratio: 1;
+  animation: logo-orbit 16s linear infinite;
+}
+.logo-rings:before,
+.logo-rings:after {
+  content: "";
+  inset: 10%;
+  width: auto;
+}
+.logo-rings:after {
+  inset: 22%;
+  border-style: dashed;
+  animation-direction: reverse;
+}
+.about-ticker {
+  overflow: hidden;
+  border-block: 1px solid #3b3b3b;
+  background: var(--red);
+  padding: 0.7rem 0;
+}
+.about-ticker > div {
+  width: max-content;
+  white-space: nowrap;
+  font: 700 1rem "Chakra Petch";
+  letter-spacing: 0.13em;
+  animation: ticker-run 22s linear infinite;
+}
+.origin-section {
+  display: grid;
+  grid-template-columns: 140px 1.15fr 0.85fr;
+  gap: clamp(2rem, 5vw, 6rem);
+  align-items: start;
+}
+.origin-label {
+  position: sticky;
+  top: 140px;
+  border-top: 2px solid var(--red);
+  padding-top: 1rem;
+}
+.origin-label span {
+  display: block;
+  font: 700 3rem "Chakra Petch";
+  color: #ed1c24;
+}
+.origin-label small {
+  color: #888;
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+}
+.origin-copy h2 {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  margin: 0.7rem 0;
+}
+.origin-lead {
+  font-size: 1.2rem !important;
+  color: #e1e1e1 !important;
+}
+.origin-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+.origin-columns p {
+  font-size: 0.85rem;
+}
+.origin-visual {
+  position: relative;
+}
+.origin-visual img {
+  height: 570px;
+  filter: grayscale(0.65) saturate(0.8);
+}
+.origin-visual:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 55%, #080808e8);
+}
+.origin-visual span {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  font: 600 0.72rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.direction-section {
+  background: #0c0c0c;
+}
+.direction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.direction-grid article {
+  position: relative;
+  overflow: hidden;
+  min-height: 420px;
+  padding: clamp(2rem, 5vw, 4rem);
+  background: #121212;
+  border: 1px solid #303030;
+  display: flex;
+  flex-direction: column;
+}
+.direction-grid article:before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  right: -100px;
+  top: -100px;
+  border: 1px solid #ed1c2435;
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px #ed1c2407;
+}
+.direction-grid article > span {
+  color: #ed1c24;
+  font: 600 0.68rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.direction-grid h3 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  max-width: 600px;
+  margin: 2rem 0 1rem;
+}
+.direction-grid p {
+  max-width: 540px;
+}
+.direction-grid b {
+  margin-top: auto;
+  border-top: 1px solid #3c3c3c;
+  padding-top: 1rem;
+  color: #777;
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.values-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  background: radial-gradient(circle at 10% 30%, #280708, transparent 25%);
+}
+.values-intro {
+  position: sticky;
+  top: 140px;
+  height: max-content;
+}
+.values-intro h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 0.7rem 0;
+}
+.value-stack {
+  border-top: 1px solid #3a3a3a;
+}
+.value-stack article {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.7rem 0.5rem;
+  border-bottom: 1px solid #3a3a3a;
+  transition: 0.35s;
+}
+.value-stack article:hover {
+  padding-left: 1.5rem;
+  background: linear-gradient(90deg, #32090b, transparent);
+}
+.value-stack > article > span {
+  font: 700 1.5rem "Chakra Petch";
+  color: #ed1c24;
+}
+.value-stack h3 {
+  margin: 0;
+}
+.value-stack p {
+  margin: 0.3rem 0 0;
+  font-size: 0.8rem;
+}
+.value-stack > article > b {
+  font: 600 0.62rem "Chakra Petch";
+  color: #777;
+  letter-spacing: 0.15em;
+}
+.audience-section {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 4rem;
+  align-items: start;
+  background: #0d0d0d;
+}
+.audience-section h2 {
+  font-size: clamp(3rem, 6vw, 6rem);
+  margin: 0.7rem 0;
+}
+.audience-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.audience-map article {
+  min-height: 210px;
+  padding: 1.5rem;
+  border: 1px solid #303030;
+  margin: -1px 0 0 -1px;
+  transition: 0.35s;
+}
+.audience-map article:last-child {
+  grid-column: 1/-1;
+}
+.audience-map article:hover {
+  background: #ed1c24;
+  border-color: #ed1c24;
+  transform: translateY(-4px);
+}
+.audience-map strong {
+  font: 700 1.6rem "Chakra Petch";
+  color: #ed1c24;
+}
+.audience-map article:hover strong,
+.audience-map article:hover p {
+  color: white;
+}
+.audience-map h3 {
+  font-size: 1.6rem;
+  margin: 2rem 0 0.5rem;
+}
+.audience-map p {
+  font-size: 0.78rem;
+}
+.identity-section {
+  padding: 0;
+  background: #080808;
+}
+.identity-tabs {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-bottom: 1px solid #3a3a3a;
+}
+.identity-tabs button {
+  position: relative;
+  background: #101010;
+  color: #777;
+  border: 0;
+  border-right: 1px solid #333;
+  padding: 1.5rem;
+  font: 600 1rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.identity-tabs button span {
+  color: #ed1c24;
+  font-size: 0.6rem;
+  margin-right: 1rem;
+}
+.identity-tabs button.active {
+  background: #ed1c24;
+  color: white;
+}
+.identity-tabs button.active span {
+  color: white;
+}
+.identity-display {
+  position: relative;
+  overflow: hidden;
+  min-height: 600px;
+  padding: clamp(3rem, 8vw, 8rem) var(--pad);
+  display: grid;
+  grid-template-columns: 1.2fr 0.4fr 0.7fr;
+  align-items: center;
+  gap: 3rem;
+  background: radial-gradient(circle at 85% 50%, #3c090b, transparent 30%);
+}
+.identity-display > div:first-child {
+  max-width: 700px;
+}
+.identity-display > div:first-child > span {
+  color: #ed1c24;
+  font: 600 0.68rem "Chakra Petch";
+  letter-spacing: 0.15em;
+}
+.identity-display h2 {
+  font-size: clamp(3.5rem, 7vw, 7rem);
+  margin: 0.8rem 0;
+}
+.identity-display p {
+  font-size: 1rem;
+}
+.identity-stat {
+  text-align: center;
+  border-inline: 1px solid #333;
+  padding: 2rem;
+}
+.identity-stat strong,
+.identity-stat small {
+  display: block;
+}
+.identity-stat strong {
+  font: 700 4rem "Chakra Petch";
+  color: #ed1c24;
+}
+.identity-stat small {
+  text-transform: uppercase;
+  color: #777;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+}
+.identity-cube img {
+  height: 280px;
+  object-fit: contain;
+  animation: cube-float 5s ease-in-out infinite;
+}
+.about-hero + .about-ticker + section {
+  scroll-margin-top: 90px;
+}
+@keyframes cube-float {
+  50% {
+    transform: translateY(-14px) rotate(1deg);
+  }
+}
+@keyframes logo-orbit {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes ticker-run {
+  to {
+    transform: translateX(-50%);
+  }
+}
+@media (max-width: 1000px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+  }
+  .about-logo-stage {
+    min-height: 360px;
+  }
+  .about-logo-stage img {
+    height: 280px;
+  }
+  .origin-section {
+    grid-template-columns: 90px 1fr;
+  }
+  .origin-visual {
+    grid-column: 2;
+  }
+  .direction-grid {
+    grid-template-columns: 1fr;
+  }
+  .values-section,
+  .audience-section {
+    grid-template-columns: 1fr;
+  }
+  .values-intro {
+    position: static;
+  }
+  .identity-display {
+    grid-template-columns: 1fr 0.4fr;
+  }
+  .identity-cube {
+    display: none;
+  }
+}
+@media (max-width: 650px) {
+  .about-hero-actions {
+    flex-direction: column;
+  }
+  .about-hero-actions .btn {
+    width: 100%;
+  }
+  .about-logo-stage {
+    min-height: 300px;
+  }
+  .logo-rings {
+    width: 280px;
+  }
+  .origin-section {
+    grid-template-columns: 1fr;
+  }
+  .origin-label {
+    position: static;
+    display: flex;
+    gap: 1rem;
+  }
+  .origin-visual {
+    grid-column: auto;
+  }
+  .origin-visual img {
+    height: 400px;
+  }
+  .origin-columns {
+    grid-template-columns: 1fr;
+  }
+  .value-stack article {
+    grid-template-columns: 50px 1fr;
+  }
+  .value-stack > article > b {
+    display: none;
+  }
+  .audience-map {
+    grid-template-columns: 1fr;
+  }
+  .audience-map article:last-child {
+    grid-column: auto;
+  }
+  .identity-tabs button {
+    padding: 1rem 0.5rem;
+    font-size: 0.75rem;
+  }
+  .identity-tabs button span {
+    display: none;
+  }
+  .identity-display {
+    grid-template-columns: 1fr;
+  }
+  .identity-stat {
+    text-align: left;
+    border-inline: 0;
+    border-top: 1px solid #333;
+  }
+  .about-ticker > div {
+    font-size: 0.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-logo-stage img,
+  .logo-rings,
+  .logo-rings:before,
+  .logo-rings:after,
+  .about-ticker > div,
+  .identity-cube img {
+    animation: none;
+  }
+}
+
+/* Calmer About hero: reduced visual noise and improved contrast */
+.about-hero {
+  min-height: 74vh;
+  background:
+    radial-gradient(
+      circle at 78% 48%,
+      rgba(92, 14, 18, 0.24) 0,
+      rgba(28, 8, 10, 0.12) 25%,
+      transparent 48%
+    ),
+    linear-gradient(145deg, #0c0c0c, #070707);
+  grid-template-columns: 1.15fr 0.85fr;
+}
+.about-hero-grid {
+  opacity: 0.045;
+  background-size: 72px 72px;
+  mask-image: linear-gradient(
+    90deg,
+    transparent 5%,
+    #000 55%,
+    transparent 100%
+  );
+}
+.about-wordmark {
+  display: none;
+}
+.about-hero-copy {
+  max-width: 790px;
+}
+.about-hero h1 {
+  font-size: clamp(4.4rem, 8vw, 8rem);
+  line-height: 0.92;
+  max-width: 820px;
+}
+.about-hero-copy > p {
+  color: #b8b8b8;
+  line-height: 1.8;
+  max-width: 620px;
+}
+.about-logo-stage {
+  min-height: 430px;
+}
+.about-logo-stage img {
+  width: min(285px, 62vw);
+  height: 315px;
+  animation: none;
+  filter: drop-shadow(0 22px 28px #000);
+}
+.logo-rings,
+.logo-rings:before,
+.logo-rings:after {
+  width: 340px;
+  border-color: rgba(237, 28, 36, 0.18);
+  animation: none;
+}
+.logo-rings {
+  opacity: 0.55;
+}
+.about-logo-stage > span {
+  bottom: 1.75rem;
+  color: #777;
+}
+.about-ticker {
+  background: #0d0d0d;
+  border-color: #2d2d2d;
+  padding: 0.8rem 0;
+  color: #aaa;
+}
+.about-ticker > div {
+  animation: none;
+  width: 100%;
+  text-align: center;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  word-spacing: 0.45rem;
+}
+.about-hero-actions .btn.ghost,
+.about-hero-actions .btn.secondary {
+  background: #0b0b0b;
+  border-color: #555;
+}
+.about-hero-actions .btn.ghost:hover,
+.about-hero-actions .btn.secondary:hover {
+  border-color: #ed1c24;
+}
+.origin-section {
+  background: #090909;
+}
+@media (max-width: 1000px) {
+  .about-hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .about-logo-stage {
+    min-height: 300px;
+  }
+  .about-logo-stage img {
+    height: 245px;
+  }
+  .logo-rings {
+    width: 275px;
+  }
+}
+@media (max-width: 650px) {
+  .about-hero h1 {
+    font-size: clamp(3.6rem, 16vw, 5rem);
+  }
+  .about-ticker > div {
+    width: max-content;
+    text-align: left;
+    padding-left: 1rem;
+  }
+  .about-logo-stage > span {
+    text-align: center;
+    font-size: 0.52rem;
+  }
+}
+
+/* Shop scroll containment: one page scrollbar, no card overlap */
+html,
+body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+main {
+  min-width: 0;
+  overflow: clip;
+}
+.catalog-section {
+  overflow: visible;
+}
+.catalog-toolbar {
+  position: relative;
+  top: auto;
+  z-index: 5;
+  background: #101010;
+  border-top: 1px solid #303030;
+  backdrop-filter: none;
+}
+.catalog-layout,
+.catalog-results,
+.shop-product-grid,
+.shop-product {
+  min-width: 0;
+  max-width: 100%;
+}
+.catalog-filters {
+  position: relative;
+  top: auto;
+  max-height: none;
+  overflow: visible;
+  align-self: start;
+}
+.shop-product-visual,
+.shop-product-body {
+  min-width: 0;
+}
+.shop-product img {
+  max-width: 100%;
+}
+.toolbar-controls {
+  min-width: 0;
+}
+.toolbar-controls select {
+  max-width: 100%;
+}
+@media (max-width: 850px) {
+  .catalog-filters {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    max-height: 100dvh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .catalog-toolbar {
+    position: relative;
+    top: auto;
+  }
+  .catalog-layout {
+    display: block;
+  }
+}
+
+/* Desktop catalog filter follows the product list without overlapping navigation */
+@media (min-width: 851px) {
+  .catalog-layout {
+    align-items: start;
+  }
+  .catalog-filters {
+    position: sticky;
+    top: 100px;
+    max-height: calc(100dvh - 120px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: none;
+    z-index: 4;
+  }
+  .catalog-filters::-webkit-scrollbar {
+    display: none;
+  }
+  .catalog-toolbar {
+    position: relative;
+    top: auto;
+    z-index: 5;
+  }
+}
+@media (max-width: 850px) {
+  .catalog-filters {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    max-height: 100dvh;
+    overflow-y: auto;
+    scrollbar-width: auto;
+  }
+}
+
+.contact-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  min-height: 68vh;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: end;
+  gap: 4rem;
+  background:
+    radial-gradient(circle at 76% 45%, #3a090b 0, transparent 28%),
+    linear-gradient(145deg, #101010, #060606);
+}
+.contact-hero-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.contact-hero h1 {
+  font-size: clamp(4.5rem, 9vw, 8.5rem);
+  margin: 0.7rem 0;
+}
+.contact-hero > div:nth-child(2) > p {
+  max-width: 670px;
+  font-size: 1.02rem;
+}
+.support-status {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 0.6rem;
+  border-top: 1px solid #3b3b3b;
+  padding-top: 1rem;
+  margin-top: 2rem;
+  max-width: 580px;
+}
+.support-status b {
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.support-status small {
+  color: #777;
+  text-align: right;
+}
+.contact-hero-panel {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: #0a0a0acc;
+  border: 1px solid #ffffff25;
+  backdrop-filter: blur(10px);
+}
+.contact-hero-panel > span {
+  grid-column: 1/-1;
+  border-bottom: 1px solid #ffffff20;
+  padding: 0.7rem 1rem;
+  color: #888;
+  font: 600 0.6rem "Chakra Petch";
+  letter-spacing: 0.13em;
+}
+.contact-hero-panel > div {
+  padding: 1.2rem;
+  border-right: 1px solid #ffffff20;
+}
+.contact-hero-panel > div:last-child {
+  border: 0;
+}
+.contact-hero-panel strong,
+.contact-hero-panel small {
+  display: block;
+}
+.contact-hero-panel strong {
+  font: 700 2rem "Chakra Petch";
+}
+.contact-hero-panel small {
+  color: #888;
+  font-size: 0.55rem;
+  text-transform: uppercase;
+}
+.contact-channels {
+  background: #090909;
+}
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+.channel-grid article {
+  position: relative;
+  min-height: 300px;
+  padding: 1.5rem;
+  background: #121212;
+  border: 1px solid #303030;
+  display: flex;
+  flex-direction: column;
+  transition: 0.35s;
+}
+.channel-grid article:hover {
+  border-color: #753034;
+  transform: translateY(-5px);
+  background: linear-gradient(160deg, #241012, #111 55%);
+}
+.channel-grid article > span {
+  color: #ed1c24;
+  font: 600 0.62rem "Chakra Petch";
+  letter-spacing: 0.13em;
+}
+.channel-grid h3 {
+  font-size: 1.7rem;
+  margin: 2rem 0 0.7rem;
+}
+.channel-grid p {
+  font-size: 0.8rem;
+}
+.channel-grid button,
+.channel-grid a {
+  margin-top: auto;
+  align-self: flex-start;
+  background: transparent;
+  color: white;
+  border: 0;
+  border-bottom: 1px solid #ed1c24;
+  padding: 0.4rem 0;
+  font: 600 0.7rem "Chakra Petch";
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.channel-grid small {
+  color: #696969;
+  margin-top: 0.8rem;
+  font-size: 0.62rem;
+}
+.support-workspace {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 1rem;
+  background: #0c0c0c;
+}
+.ticket-form-shell {
+  border: 1px solid #383838;
+  background: #101010;
+}
+.ticket-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.8rem 1rem;
+  background: #181818;
+  border-bottom: 1px solid #383838;
+  color: #999;
+  font: 600 0.62rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.ticket-bar > div {
+  display: flex;
+  gap: 0.35rem;
+}
+.ticket-bar i {
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #444;
+}
+.ticket-bar i:first-child {
+  background: #ed1c24;
+}
+.support-form {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  display: grid;
+  gap: 1rem;
+}
+.topic-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.topic-select > span {
+  width: 100%;
+  color: #777;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.topic-select button {
+  background: #151515;
+  color: #999;
+  border: 1px solid #3b3b3b;
+  padding: 0.55rem 0.8rem;
+  font-size: 0.68rem;
+}
+.topic-select button:hover,
+.topic-select button.active {
+  background: #ed1c24;
+  border-color: #ed1c24;
+  color: white;
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+.support-form label {
+  position: relative;
+  color: #999;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.support-form input,
+.support-form textarea {
+  margin-top: 0.4rem;
+  background: #0b0b0b;
+}
+.support-form input:focus,
+.support-form textarea:focus {
+  outline: 1px solid #ed1c24;
+  border-color: #ed1c24;
+}
+.character-count {
+  position: absolute;
+  right: 0.7rem;
+  bottom: 0.45rem;
+  color: #666;
+  font-size: 0.55rem;
+}
+.form-submit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+.form-submit small {
+  color: #777;
+}
+.ticket-success {
+  position: relative;
+  border: 1px solid #335b43;
+  border-left: 3px solid #52c878;
+  background: #0d1b12;
+  padding: 1rem;
+}
+.ticket-success span,
+.ticket-success b {
+  display: block;
+}
+.ticket-success span {
+  color: #52c878;
+  font: 600 0.6rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.ticket-success b {
+  font: 700 1.3rem "Chakra Petch";
+  margin: 0.2rem 0;
+}
+.ticket-success p {
+  font-size: 0.72rem;
+  margin: 0;
+  max-width: 600px;
+}
+.ticket-success button {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: transparent;
+  color: #999;
+  border: 0;
+}
+.support-sidebar {
+  display: grid;
+  gap: 1rem;
+}
+.hours-card,
+.response-card {
+  background: #121212;
+  border: 1px solid #353535;
+  padding: 2rem;
+}
+.hours-card h2 {
+  font-size: 2.8rem;
+  margin: 1.5rem 0;
+}
+.hours-card dl {
+  margin: 2rem 0;
+}
+.hours-card dl > div {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #353535;
+  padding: 0.85rem 0;
+}
+.hours-card dt {
+  color: #999;
+}
+.hours-card dd {
+  margin: 0;
+  font-weight: 600;
+}
+.hours-card > p {
+  font-size: 0.72rem;
+}
+.response-card > span {
+  color: #ed1c24;
+  font: 600 0.62rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.response-card ol {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+}
+.response-card li {
+  border-top: 1px solid #333;
+  padding: 1rem 0;
+  font-size: 0.8rem;
+}
+.response-card li b {
+  color: #ed1c24;
+  margin-right: 0.8rem;
+}
+.faq-section {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  background:
+    radial-gradient(circle at 10% 25%, #260708, transparent 26%), #080808;
+}
+.faq-heading {
+  position: sticky;
+  top: 120px;
+  height: max-content;
+}
+.faq-heading h2 {
+  font-size: clamp(3.5rem, 6vw, 6rem);
+  margin: 0.7rem 0;
+}
+.faq-heading > strong {
+  display: block;
+  color: #ed1c24;
+  font: 600 0.65rem "Chakra Petch";
+  letter-spacing: 0.13em;
+  margin-top: 2rem;
+}
+.faq-list {
+  border-top: 1px solid #3a3a3a;
+}
+.faq-list details {
+  border-bottom: 1px solid #3a3a3a;
+}
+.faq-list summary {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 55px 1fr auto;
+  align-items: center;
+  gap: 1rem;
+  min-height: 86px;
+  cursor: pointer;
+}
+.faq-list summary::-webkit-details-marker {
+  display: none;
+}
+.faq-list summary span {
+  color: #ed1c24;
+  font: 600 0.8rem "Chakra Petch";
+}
+.faq-list summary b {
+  font: 600 1rem "Chakra Petch";
+  text-transform: uppercase;
+}
+.faq-list summary i {
+  font-style: normal;
+  font-size: 1.5rem;
+  color: #888;
+  transition: 0.3s;
+}
+.faq-list details[open] summary i {
+  transform: rotate(45deg);
+  color: #ed1c24;
+}
+.faq-list details p {
+  padding: 0 3rem 1.5rem 55px;
+  font-size: 0.85rem;
+  max-width: 750px;
+}
+.faq-list details:hover {
+  background: linear-gradient(90deg, #27090a, transparent);
+}
+@media (max-width: 1000px) {
+  .contact-hero {
+    grid-template-columns: 1fr;
+  }
+  .channel-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .support-workspace {
+    grid-template-columns: 1fr;
+  }
+  .support-sidebar {
+    grid-template-columns: 1fr 1fr;
+  }
+  .faq-section {
+    grid-template-columns: 1fr;
+  }
+  .faq-heading {
+    position: static;
+  }
+}
+@media (max-width: 650px) {
+  .contact-hero h1 {
+    font-size: clamp(3.8rem, 16vw, 5.5rem);
+  }
+  .contact-hero-panel {
+    grid-template-columns: 1fr 1fr;
+  }
+  .contact-hero-panel > div:last-child {
+    grid-column: 1/-1;
+    border-top: 1px solid #ffffff20;
+  }
+  .channel-grid,
+  .support-sidebar,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .channel-grid article {
+    min-height: 250px;
+  }
+  .form-submit {
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .form-submit .btn {
+    width: 100%;
+  }
+  .faq-list summary {
+    grid-template-columns: 35px 1fr auto;
+  }
+  .faq-list details p {
+    padding-left: 35px;
+  }
+  .support-status {
+    grid-template-columns: auto 1fr;
+  }
+  .support-status small {
+    grid-column: 1/-1;
+    text-align: left;
+  }
+}
+
+/* Contact form field sizing and alignment */
+.support-form label {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: start;
+  gap: 0.4rem;
+}
+.support-form input,
+.support-form textarea,
+.support-form select {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  background: #0b0b0b;
+  color: white;
+  border: 1px solid #383838;
+  font:
+    500 0.82rem/1.5 "Manrope",
+    sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+.support-form textarea {
+  min-height: 170px;
+  resize: vertical;
+}
+.support-form .form-row label {
+  min-width: 0;
+}
+.support-form .character-count {
+  display: block;
+  position: absolute;
+  right: 0.75rem;
+  bottom: 0.55rem;
+}
+.support-form > label:has(textarea) {
+  padding-bottom: 0.2rem;
+}
+
+/* Global gaming navigation */
+.global-header {
+  height: 80px;
+  padding: 0 var(--pad);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(8, 8, 8, 0.96);
+  border-bottom: 1px solid #343434;
+  box-shadow: 0 10px 35px #0008;
+}
+.global-header:after {
+  content: "";
+  position: absolute;
+  left: var(--pad);
+  right: var(--pad);
+  bottom: -1px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--red),
+    transparent 28%,
+    transparent 72%,
+    var(--red)
+  );
+  opacity: 0.65;
+}
+.global-header .logo {
+  flex: none;
+}
+.global-header .brand-logo {
+  width: 43px;
+  height: 48px;
+}
+.site-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1rem;
+  flex: 1;
+}
+.nav-primary {
+  display: flex;
+  align-items: center;
+  padding: 0.28rem;
+  background: #111;
+  border: 1px solid #303030;
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+}
+.nav-primary > a {
+  position: relative;
+  padding: 0.65rem 0.78rem;
+  color: #929292;
+  font: 600 0.66rem/1 "Chakra Petch";
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.nav-primary > a:before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  bottom: 0.25rem;
+  height: 2px;
+  background: var(--red);
+  transition: 0.28s;
+}
+.nav-primary > a:hover,
+.nav-primary > a.active {
+  color: white;
+  background: #1b1b1b;
+}
+.nav-primary > a:hover:before,
+.nav-primary > a.active:before {
+  left: 0.75rem;
+  right: 0.75rem;
+}
+.nav-tools {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 0;
+  padding: 0;
+}
+.nav-tools > a,
+.nav-tools > button {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111 !important;
+  color: #ddd !important;
+  border: 1px solid #303030 !important;
+  padding: 0.55rem 0.7rem !important;
+  font: 600 0.62rem "Chakra Petch" !important;
+  letter-spacing: 0.06em;
+}
+.nav-tools > a:hover,
+.nav-tools > button:hover {
+  border-color: #743034 !important;
+  background: #211012 !important;
+}
+.nav-tools b {
+  display: grid;
+  place-items: center;
+  min-width: 18px;
+  height: 18px;
+  margin-left: 0.3rem;
+  background: var(--red);
+  border-radius: 0;
+  clip-path: polygon(
+    4px 0,
+    100% 0,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    0 100%,
+    0 4px
+  );
+  font-size: 0.55rem;
+}
+.site-navigation > .btn {
+  min-height: 40px;
+  padding: 0.7rem 1.1rem;
+  clip-path: polygon(
+    8px 0,
+    100% 0,
+    100% calc(100% - 8px),
+    calc(100% - 8px) 100%,
+    0 100%,
+    0 8px
+  );
+  box-shadow: inset 0 0 0 1px #ff5c62;
+}
+.site-navigation > .admin-tab {
+  min-height: 38px;
+  display: flex;
+  align-items: center;
+  padding: 0.55rem 0.8rem;
+  font: 600 0.62rem "Chakra Petch";
+  letter-spacing: 0.08em;
+}
+.global-header .menu {
+  font-family: "Chakra Petch";
+  letter-spacing: 0.1em;
+}
+.global-search {
+  top: 80px;
+  border-top: 1px solid #ed1c2440;
+  box-shadow: 0 20px 50px #000;
+}
+.global-search label {
+  font: 600 0.68rem "Chakra Petch";
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+@media (max-width: 1180px) {
+  .global-header {
+    gap: 1rem;
+  }
+  .nav-primary > a {
+    padding: 0.65rem 0.55rem;
+  }
+  .site-navigation {
+    gap: 0.5rem;
+  }
+  .nav-tools > a,
+  .nav-tools > button {
+    padding: 0.5rem !important;
+  }
+  .site-navigation > .btn {
+    display: none;
+  }
+}
+@media (max-width: 900px) {
+  .global-header {
+    height: 70px;
+  }
+  .global-header .menu {
+    display: block;
+    margin-left: auto;
+  }
+  .site-navigation {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    max-height: calc(100dvh - 70px);
+    overflow-y: auto;
+    padding: 1rem var(--pad) 1.5rem;
+    background: #0c0c0cf8;
+    border-bottom: 1px solid #3a3a3a;
+    box-shadow: 0 25px 50px #000;
+    align-items: stretch;
+    flex-direction: column;
+  }
+  .site-navigation.open {
+    display: flex;
+  }
+  .nav-primary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    clip-path: none;
+    padding: 0.5rem;
+  }
+  .nav-primary > a {
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #292929;
+  }
+  .nav-tools {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    padding: 0;
+  }
+  .nav-tools > a,
+  .nav-tools > button {
+    min-height: 46px !important;
+  }
+  .site-navigation > .btn {
+    display: flex;
+  }
+  .site-navigation > .admin-tab {
+    justify-content: center;
+  }
+  .global-search {
+    top: 70px;
+  }
+  .global-header:after {
+    left: var(--pad);
+    right: var(--pad);
+  }
+}
+@media (max-width: 520px) {
+  .global-header .logo > span {
+    font-size: 1rem;
+  }
+  .global-header .logo small {
+    display: none;
+  }
+  .global-header .brand-logo {
+    width: 36px;
+    height: 40px;
+  }
+  .nav-primary {
+    grid-template-columns: 1fr;
+  }
+  .nav-tools {
+    grid-template-columns: 1fr 1fr;
+  }
+  .site-navigation {
+    padding-inline: 1rem;
+  }
+}
+
+/* Category CTA remains visible without hover */
+.category-copy {
+  transform: none;
+}
+.category-copy p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  margin: 0;
+  transform: translateY(0.35rem);
+  transition:
+    opacity 0.35s ease,
+    transform 0.35s ease,
+    max-height 0.35s ease,
+    margin 0.35s ease;
+}
+.category-copy b {
+  min-height: 36px;
+  color: #fff;
+  margin-top: 0.75rem;
+  align-items: center;
+}
+.category-copy i {
+  display: grid;
+  place-items: center;
+  width: 25px;
+  height: 25px;
+  background: #ed1c24;
+  color: #fff;
+}
+.category-tile:hover .category-copy p,
+.category-tile:focus-visible .category-copy p {
+  opacity: 1;
+  max-height: 48px;
+  margin: 0.35rem 0 0;
+  transform: none;
+}
+.category-tile:focus-visible {
+  outline: 2px solid #ed1c24;
+  outline-offset: 2px;
+}
+.category-tile:focus-visible img {
+  transform: scale(1.05);
+  filter: grayscale(0) saturate(1) brightness(0.75);
+}
+@media (max-width: 600px) {
+  .category-copy p {
+    opacity: 1;
+    max-height: 48px;
+    margin: 0.35rem 0 0;
+    transform: none;
+  }
+}
+
+/* Arcade co-op story */
+.coop-story {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(3rem, 8vw, 9rem);
+  align-items: center;
+  background:
+    radial-gradient(circle at 75% 45%, #33080a 0, transparent 27%), #080808;
+}
+.coop-grid {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(#fff 1px, transparent 1px),
+    linear-gradient(90deg, #fff 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(90deg, transparent, #000);
+}
+.arcade-label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.2rem;
+  font: 600 0.6rem "Chakra Petch";
+  letter-spacing: 0.14em;
+}
+.arcade-label span {
+  padding: 0.35rem 0.55rem;
+  color: #ed1c24;
+  border: 1px solid #6d292c;
+}
+.arcade-label b {
+  color: #52c878;
+}
+.coop-heading h2 {
+  font-size: clamp(3.5rem, 6.5vw, 6.7rem);
+  margin: 0.7rem 0;
+}
+.coop-heading > p {
+  max-width: 570px;
+  font-size: 0.9rem;
+}
+.coop-heading > .btn {
+  margin-top: 1rem;
+  clip-path: polygon(
+    9px 0,
+    100% 0,
+    100% calc(100% - 9px),
+    calc(100% - 9px) 100%,
+    0 100%,
+    0 9px
+  );
+}
+.coop-console {
+  position: relative;
+  padding: clamp(1.5rem, 4vw, 3rem);
+  background: #101010;
+  border: 1px solid #3b3b3b;
+  box-shadow:
+    12px 12px 0 #050505,
+    12px 12px 0 1px #242424;
+}
+.coop-console:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.08;
+  background: repeating-linear-gradient(0deg, transparent 0 3px, #fff 4px);
+}
+.console-top {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #3a3a3a;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+  font: 600 0.6rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.console-top span {
+  color: #999;
+}
+.console-top b {
+  color: #52c878;
+}
+.coop-console > p {
+  position: relative;
+  font-size: 0.82rem;
+}
+.player-slots {
+  position: relative;
+  display: grid;
+  gap: 0.45rem;
+  margin: 1.5rem 0;
+}
+.player-slots article {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 62px;
+  padding: 0.65rem;
+  background: #0a0a0a;
+  border: 1px solid #2e2e2e;
+  transition: 0.3s;
+}
+.player-slots article:hover {
+  transform: translateX(5px);
+  border-color: #743034;
+  background: #1d0e0f;
+}
+.player-slots article > span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  background: #ed1c24;
+  clip-path: polygon(
+    7px 0,
+    100% 0,
+    100% calc(100% - 7px),
+    calc(100% - 7px) 100%,
+    0 100%,
+    0 7px
+  );
+  font: 700 0.7rem "Chakra Petch";
+}
+.player-slots b,
+.player-slots small {
+  display: block;
+}
+.player-slots b {
+  font: 600 0.72rem "Chakra Petch";
+  letter-spacing: 0.08em;
+}
+.player-slots small {
+  color: #777;
+  font-size: 0.58rem;
+}
+.player-slots i {
+  font-style: normal;
+  color: #52c878;
+  font-size: 0.55rem;
+}
+.community-xp {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.8rem;
+  font: 600 0.55rem "Chakra Petch";
+  letter-spacing: 0.1em;
+}
+.community-xp > div {
+  height: 6px;
+  background: #292929;
+}
+.community-xp > div i {
+  display: block;
+  width: 82%;
+  height: 100%;
+  background: linear-gradient(90deg, #8d0c11, #ed1c24);
+  animation: xp-load 1.2s both;
+}
+.community-xp b {
+  color: #ed1c24;
+}
+@keyframes xp-load {
+  from {
+    width: 0;
+  }
+}
+
+/* Stronger arcade navigation treatment */
+.announcement {
+  position: relative;
+  overflow: hidden;
+  background: #0b0b0b;
+  color: #fff;
+  border-bottom: 1px solid #54171a;
+  padding: 0.45rem 8rem;
+}
+.announcement:before,
+.announcement:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  background: repeating-linear-gradient(
+    135deg,
+    #ed1c24 0 8px,
+    #a50d12 8px 16px
+  );
+  color: #fff;
+  font: 700 0.58rem "Chakra Petch";
+  letter-spacing: 0.12em;
+}
+.announcement:before {
+  content: "BONUS ROUND";
+  left: 0;
+}
+.announcement:after {
+  content: "20% ACTIVE";
+  right: 0;
+}
+.global-header {
+  background: linear-gradient(180deg, #101010, #080808);
+  box-shadow:
+    0 10px 35px #000,
+    inset 0 1px #ffffff0d;
+}
+.global-header:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.055;
+  background-image: linear-gradient(
+    90deg,
+    transparent 49%,
+    #fff 50%,
+    transparent 51%
+  );
+  background-size: 18px 100%;
+}
+.global-header .logo {
+  position: relative;
+  padding-right: 1.1rem;
+  border-right: 1px solid #343434;
+}
+.global-header .logo:after {
+  content: "P1";
+  position: absolute;
+  right: -9px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: grid;
+  place-items: center;
+  width: 18px;
+  height: 18px;
+  background: #ed1c24;
+  border: 2px solid #080808;
+  font: 700 0.48rem "Chakra Petch";
+}
+.nav-primary {
+  counter-reset: nav-slot;
+  background: #0c0c0c;
+  box-shadow: inset 0 0 20px #000;
+}
+.nav-primary > a {
+  counter-increment: nav-slot;
+  padding-top: 1rem;
+}
+.nav-primary > a:after {
+  content: "0" counter(nav-slot);
+  position: absolute;
+  left: 0.78rem;
+  top: 0.28rem;
+  color: #555;
+  font: 600 0.43rem "Chakra Petch";
+  letter-spacing: 0.08em;
+}
+.nav-primary > a.active {
+  background: #ed1c24;
+  color: #fff;
+  text-shadow: 1px 1px #70080c;
+}
+.nav-primary > a.active:before {
+  background: white;
+}
+.nav-primary > a.active:after {
+  color: #ffd9db;
+}
+.nav-tools > a,
+.nav-tools > button {
+  position: relative;
+  clip-path: polygon(
+    6px 0,
+    100% 0,
+    100% calc(100% - 6px),
+    calc(100% - 6px) 100%,
+    0 100%,
+    0 6px
+  );
+}
+.site-navigation > .btn {
+  position: relative;
+}
+.site-navigation > .btn:before {
+  content: "START";
+  position: absolute;
+  top: -0.55rem;
+  left: 0.45rem;
+  background: #080808;
+  color: #ff6f74;
+  padding: 0 0.25rem;
+  font-size: 0.43rem;
+  letter-spacing: 0.1em;
+}
+.global-header .menu {
+  clip-path: polygon(
+    7px 0,
+    100% 0,
+    100% calc(100% - 7px),
+    calc(100% - 7px) 100%,
+    0 100%,
+    0 7px
+  );
+  background: #ed1c24;
+  border-color: #ed1c24;
+}
+@media (max-width: 900px) {
+  .coop-story {
+    grid-template-columns: 1fr;
+  }
+  .announcement {
+    padding-inline: 1rem;
+  }
+  .announcement:before,
+  .announcement:after {
+    display: none;
+  }
+  .global-header .logo {
+    border-right: 0;
+  }
+  .global-header .logo:after {
+    display: none;
+  }
+  .nav-primary > a {
+    padding-top: 1.1rem;
+  }
+  .nav-primary > a:after {
+    left: 0.55rem;
+  }
+}
+@media (max-width: 600px) {
+  .coop-console {
+    padding: 1rem;
+    box-shadow: 6px 6px 0 #050505;
+  }
+  .console-top {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .community-xp {
+    grid-template-columns: 1fr;
+  }
+  .coop-heading > .btn {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .community-xp > div i {
+    animation: none;
+  }
+}

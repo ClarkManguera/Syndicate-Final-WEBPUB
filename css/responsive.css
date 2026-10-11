@@ -1,0 +1,96 @@
+@media (max-width: 1050px) {
+  .site-nav {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 82px;
+    padding: 1.5rem;
+    background: #121212;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .site-nav.open {
+    display: flex;
+  }
+  .menu-btn {
+    display: block;
+  }
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .filters {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 3.8rem;
+  }
+  .site-header {
+    height: 70px;
+  }
+  .nav-actions .account-label {
+    display: none;
+  }
+  .search-panel {
+    top: 101px;
+  }
+  .hero {
+    min-height: 78vh;
+    background-position: 64%;
+  }
+  .section-head,
+  .promo {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .category-grid,
+  .product-grid,
+  .feature-grid,
+  .setup-grid,
+  .brand-grid,
+  .split,
+  .cart-layout,
+  .modal-body,
+  .compare-grid,
+  .filters {
+    grid-template-columns: 1fr;
+  }
+  .product-card img {
+    height: 290px;
+  }
+  .newsletter-row {
+    flex-direction: column;
+  }
+  .newsletter-row input {
+    min-width: 0;
+  }
+  .story-img {
+    height: 320px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  .campaign-art strong {
+    font-size: 6rem;
+  }
+  .cart-line {
+    grid-template-columns: 80px 1fr;
+  }
+  .cart-line > strong {
+    grid-column: 2;
+  }
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+  .global-search {
+    top: 100px;
+  }
+}

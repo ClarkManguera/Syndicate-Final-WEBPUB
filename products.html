@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="SYNDICATE fictional gaming accessories Final Project"
+    />
+    <title>Shop | SYNDICATE</title>
+    <link rel="icon" href="images/logo/syndicate-logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main>
+      <section class="shop-hero">
+        <div>
+          <p class="crumbs"><a href="index.html">Home</a> / Shop</p>
+          <span class="eyebrow">SYNDICATE HARDWARE CATALOG</span>
+          <h1>Build your<br /><em>loadout.</em></h1>
+          <p>
+            Thirty carefully organized demo products. Filter the noise and find
+            what belongs on your desk.
+          </p>
+        </div>
+        <div class="shop-hero-stats">
+          <span><b>30</b><small>Products</small></span
+          ><span><b>10</b><small>Categories</small></span
+          ><span><b>20%</b><small>Selected gear</small></span>
+        </div>
+      </section>
+      <section class="catalog-section">
+        <div class="catalog-toolbar">
+          <button class="mobile-filter-btn" data-mobile-filter>Filters</button>
+          <div><strong data-results>Loading…</strong></div>
+          <div class="toolbar-controls">
+            <label
+              >Sort by<select data-filter name="sort">
+                <option value="featured">Featured first</option>
+                <option value="low">Price: low to high</option>
+                <option value="high">Price: high to low</option>
+                <option value="az">Name: A–Z</option>
+              </select></label
+            >
+            <div class="view-toggle">
+              <button class="active" data-view-toggle>Grid / List</button>
+            </div>
+          </div>
+        </div>
+        <div class="catalog-layout">
+          <aside class="catalog-filters">
+            <div class="filter-title">
+              <div>
+                <span class="eyebrow">REFINE RESULTS</span>
+                <h3>Filters</h3>
+              </div>
+              <button data-close-filter>Close</button>
+            </div>
+            <label
+              >Search products<input
+                data-filter
+                name="q"
+                placeholder="Product or brand" /></label
+            ><label>Category<select data-filter name="category"></select></label
+            ><label>Brand<select data-filter name="brand"></select></label
+            ><label
+              >Availability<select data-filter name="availability">
+                <option>All</option>
+                <option>In stock</option>
+                <option>Low stock</option>
+                <option>Pre-order</option>
+              </select></label
+            >
+            <fieldset>
+              <legend>Price range</legend>
+              <div class="price-range">
+                <label
+                  >Minimum<input
+                    data-filter
+                    name="min"
+                    type="number"
+                    min="0"
+                    placeholder="₱0" /></label
+                ><span>—</span
+                ><label
+                  >Maximum<input
+                    data-filter
+                    name="max"
+                    type="number"
+                    min="0"
+                    placeholder="₱25,000"
+                /></label>
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Collections</legend>
+              <label class="filter-check"
+                ><input data-filter name="featured" type="checkbox" />
+                Featured</label
+              ><label class="filter-check"
+                ><input data-filter name="new" type="checkbox" /> New
+                arrivals</label
+              ><label class="filter-check"
+                ><input data-filter name="sale" type="checkbox" /> 20%
+                sale</label
+              >
+            </fieldset>
+            <button class="clear-filters" data-clear>Clear all filters</button
+            ><button class="btn apply-filters" data-close-filter>
+              Show products
+            </button>
+          </aside>
+          <div class="catalog-results">
+            <div class="shop-product-grid" data-product-grid>
+              <div class="state">Loading /api/products…</div>
+            </div>
+            <div class="load-more">
+              <button class="btn hidden" data-load>Load more</button>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal" data-modal role="dialog" aria-modal="true"></div>
+      <section id="wishlist">
+        <span class="eyebrow">SAVED GEAR</span>
+        <h2>Your wishlist.</h2>
+        <div data-wishlist></div>
+      </section>
+      <section id="cart">
+        <span class="eyebrow">PERSISTENT DEMO BAG</span>
+        <h2>Your loadout.</h2>
+        <div data-cart></div>
+      </section>
+      <section>
+        <div class="split">
+          <form class="contact-form" data-checkout-form>
+            <span class="eyebrow">DEMO CHECKOUT</span>
+            <h2>Delivery details.</h2>
+            <p class="demo-note">
+              No payment processing is connected. Do not enter card details.
+            </p>
+            <label>Name<input required minlength="2" /></label
+            ><label>Email<input required type="email" /></label
+            ><label>Phone<input required pattern="[0-9+ -]{7,}" /></label
+            ><label
+              >Delivery address<textarea
+                required
+                minlength="10"
+                rows="4"
+              ></textarea></label
+            ><button class="btn">Place demo order</button>
+            <div data-checkout-status role="status"></div>
+          </form>
+          <div id="demo-account">
+            <span class="eyebrow">DEMO ACCOUNT</span>
+            <h2>Account interface.</h2>
+            <form
+              class="contact-form"
+              onsubmit="event.preventDefault();SYN.toast('Demo sign-in validated. No authentication occurred.');this.reset()"
+            >
+              <label>Email<input type="email" required /></label
+              ><label
+                >Password<input type="password" required minlength="6" /></label
+              ><button class="btn">Sign in / create demo</button
+              ><small>Credentials are not submitted or saved.</small>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div data-footer></div>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/wishlist.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

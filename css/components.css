@@ -1,0 +1,55 @@
+.status {
+  font-size: 0.68rem;
+  color: #9a9a9a;
+}
+.sale {
+  color: #ed1c24;
+  font-size: 0.68rem;
+}
+.success {
+  border-left: 3px solid #ed1c24;
+  padding: 1rem;
+  background: #151515;
+}
+.error {
+  border-left: 3px solid #ed1c24;
+  padding: 1rem;
+  color: #ff777b;
+}
+.chip {
+  display: inline-block;
+  padding: 0.25rem 0.55rem;
+  border: 1px solid #444;
+  font-size: 0.7rem;
+  margin: 0.2rem;
+}
+.text-button {
+  border: 0;
+  background: transparent;
+  color: #ddd;
+  text-decoration: underline;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  text-align: left;
+  padding: 0.7rem;
+  border-bottom: 1px solid #333;
+}
+.demo-note {
+  padding: 1rem;
+  border: 1px solid #5d4b25;
+  background: #1b170d;
+  color: #d7c27e;
+}
+.social-caption {
+  padding: 1.5rem;
+  background: #151515;
+  border-left: 2px solid #ed1c24;
+}
+.checklist li {
+  margin: 0.5rem 0;
+}

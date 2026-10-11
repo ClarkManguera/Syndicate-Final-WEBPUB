@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="SYNDICATE fictional gaming accessories Final Project"
+    />
+    <title>Features | SYNDICATE</title>
+    <link rel="icon" href="images/logo/syndicate-logo.svg" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div data-header></div>
+    <main>
+      <section class="arcade-hero">
+        <div class="arcade-grid"></div>
+        <div class="arcade-hero-copy">
+          <div class="arcade-status">
+            <span>PLAYER 01</span><b>SYNDICATE OS</b><span>ONLINE</span>
+          </div>
+          <span class="eyebrow">FEATURE SELECT</span>
+          <h1>SMART GEAR.<br /><em>HIGH SCORE.</em></h1>
+          <p>
+            Eight systems built to make every product search, comparison, and
+            setup decision faster and clearer.
+          </p>
+          <a class="btn" href="#feature-console">Insert player</a>
+        </div>
+        <div class="arcade-score">
+          <span>FEATURES</span><strong>08</strong
+          ><small>ALL SYSTEMS READY</small>
+        </div>
+      </section>
+      <section id="feature-console" class="arcade-section">
+        <div class="arcade-marquee">
+          <span>SYNDICATE SYSTEM MODULES</span>
+          <div><b>STATUS</b> ALL SYSTEMS ONLINE</div>
+        </div>
+        <div class="arcade-console">
+          <div class="module-select" data-feature-modules></div>
+          <div class="module-screen" data-feature-screen></div>
+        </div>
+        <div class="arcade-achievements">
+          <article>
+            <span>01</span>
+            <div><b>API CONNECTED</b><small>Live product retrieval</small></div>
+            <i>READY</i>
+          </article>
+          <article>
+            <span>02</span>
+            <div>
+              <b>SHOPPING STATE</b><small>Cart and wishlist persistence</small>
+            </div>
+            <i>READY</i>
+          </article>
+          <article>
+            <span>03</span>
+            <div>
+              <b>CAMPAIGN ENGINE</b><small>Eligible discount logic</small>
+            </div>
+            <i>READY</i>
+          </article>
+          <article>
+            <span>04</span>
+            <div><b>RESPONSIVE MODE</b><small>Desktop to mobile</small></div>
+            <i>READY</i>
+          </article>
+        </div>
+      </section>
+      <section class="versus-section">
+        <div class="versus-heading">
+          <div>
+            <span class="eyebrow">VERSUS MODE</span>
+            <h2>Choose your contenders.</h2>
+            <p>
+              Select one category and compare up to three products from the API
+              catalog.
+            </p>
+          </div>
+        </div>
+        <div data-comparison><div class="state">Loading contenders…</div></div>
+      </section>
+      <section class="arcade-cta">
+        <div>
+          <span>CONTINUE?</span>
+          <h2>Your next upgrade is waiting.</h2>
+        </div>
+        <div class="arcade-cta-actions">
+          <a class="btn" href="products.html">Enter the shop</a
+          ><a class="btn secondary" href="products.html?sale=true"
+            >View sale gear</a
+          >
+        </div>
+      </section>
+    </main>
+    <div data-footer></div>
+    <script src="js/main.js"></script>
+    <script src="js/comparison.js"></script>
+  </body>
+</html>

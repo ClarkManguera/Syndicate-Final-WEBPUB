@@ -1,0 +1,17 @@
+{
+  "name": "syndicate-final-project",
+  "version": "1.0.0",
+  "private": true,
+  "description": "SYNDICATE Web Publishing and Digital Advertising Final Project",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

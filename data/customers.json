@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Rivera",
+    "email": "alex.rivera@example.test",
+    "customerType": "Student Gamer"
+  },
+  {
+    "id": 2,
+    "name": "Sam Cruz",
+    "email": "sam.cruz@example.test",
+    "customerType": "Office Professional"
+  },
+  {
+    "id": 3,
+    "name": "Jamie Santos",
+    "email": "jamie.santos@example.test",
+    "customerType": "Tech Enthusiast"
+  }
+]

@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "Pulse 68 Wireless",
+    "brand": "Syndicate Lab",
+    "category": "Mice",
+    "description": "Illustrative demo mice product selected for performance-focused gaming setups.",
+    "price": 1590,
+    "originalPrice": 1988,
+    "image": "/images/01_Gaming_Mice/01_Pulse_68_Wireless.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mice category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 2,
+    "name": "G Pro Wireless",
+    "brand": "Logitech G",
+    "category": "Mice",
+    "description": "Illustrative demo mice product selected for performance-focused gaming setups.",
+    "price": 4290,
+    "originalPrice": null,
+    "image": "/images/01_Gaming_Mice/02_G_Pro_Wireless.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mice category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 3,
+    "name": "DeathAdder Essential",
+    "brand": "Razer",
+    "category": "Mice",
+    "description": "Illustrative demo mice product selected for performance-focused gaming setups.",
+    "price": 1290,
+    "originalPrice": null,
+    "image": "/images/01_Gaming_Mice/03_DeathAdder_Essential.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mice category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 4,
+    "name": "Alloy Origins Core",
+    "brand": "HyperX",
+    "category": "Keyboards",
+    "description": "Illustrative demo keyboards product selected for performance-focused gaming setups.",
+    "price": 3890,
+    "originalPrice": 4862,
+    "image": "/images/02_Mechanical_Keyboards/04_Alloy_Origins_Core.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Keyboards category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 5,
+    "name": "Huntsman Mini",
+    "brand": "Razer",
+    "category": "Keyboards",
+    "description": "Illustrative demo keyboards product selected for performance-focused gaming setups.",
+    "price": 5990,
+    "originalPrice": null,
+    "image": "/images/02_Mechanical_Keyboards/05_Huntsman_Mini.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Keyboards category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 6,
+    "name": "K70 Core RGB",
+    "brand": "Corsair",
+    "category": "Keyboards",
+    "description": "Illustrative demo keyboards product selected for performance-focused gaming setups.",
+    "price": 5290,
+    "originalPrice": null,
+    "image": "/images/02_Mechanical_Keyboards/06_K70_Core_RGB.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Keyboards category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 7,
+    "name": "Cloud III Wireless",
+    "brand": "HyperX",
+    "category": "Headsets",
+    "description": "Illustrative demo headsets product selected for performance-focused gaming setups.",
+    "price": 6990,
+    "originalPrice": 8738,
+    "image": "/images/03_Gaming_Headsets/07_Cloud_III_Wireless.png",
+    "availability": "Low stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Headsets category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 8,
+    "name": "BlackShark V2 X",
+    "brand": "Razer",
+    "category": "Headsets",
+    "description": "Illustrative demo headsets product selected for performance-focused gaming setups.",
+    "price": 2690,
+    "originalPrice": null,
+    "image": "/images/03_Gaming_Headsets/08_BlackShark_V2_X.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Headsets category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 9,
+    "name": "Arctis Nova 5",
+    "brand": "SteelSeries",
+    "category": "Headsets",
+    "description": "Illustrative demo headsets product selected for performance-focused gaming setups.",
+    "price": 7590,
+    "originalPrice": null,
+    "image": "/images/03_Gaming_Headsets/09_Arctis_Nova_5.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Headsets category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 10,
+    "name": "TUF VG249Q3A",
+    "brand": "ASUS",
+    "category": "Monitors",
+    "description": "Illustrative demo monitors product selected for performance-focused gaming setups.",
+    "price": 10990,
+    "originalPrice": 13738,
+    "image": "/images/04_Gaming_Monitors/10_TUF_VG249Q3A.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Monitors category"
+    ],
+    "featured": true,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 11,
+    "name": "Odyssey G5 27",
+    "brand": "Samsung",
+    "category": "Monitors",
+    "description": "Illustrative demo monitors product selected for performance-focused gaming setups.",
+    "price": 16490,
+    "originalPrice": null,
+    "image": "/images/04_Gaming_Monitors/11_Odyssey_G5_27.png",
+    "availability": "Pre-order",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Monitors category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 12,
+    "name": "UltraGear 24GN60R",
+    "brand": "LG",
+    "category": "Monitors",
+    "description": "Illustrative demo monitors product selected for performance-focused gaming setups.",
+    "price": 8990,
+    "originalPrice": null,
+    "image": "/images/04_Gaming_Monitors/12_UltraGear_24GN60R.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Monitors category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 13,
+    "name": "T1 Race Gaming Chair",
+    "brand": "Corsair",
+    "category": "Chairs",
+    "description": "Illustrative demo chairs product selected for performance-focused gaming setups.",
+    "price": 13990,
+    "originalPrice": 17488,
+    "image": "/images/05_Gaming_Chairs/13_T1_Race_Gaming_Chair.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Chairs category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 14,
+    "name": "Craft Pro Chair",
+    "brand": "Syndicate Lab",
+    "category": "Chairs",
+    "description": "Illustrative demo chairs product selected for performance-focused gaming setups.",
+    "price": 8490,
+    "originalPrice": null,
+    "image": "/images/05_Gaming_Chairs/14_Craft_Pro_Chair.png",
+    "availability": "Low stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Chairs category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 15,
+    "name": "Racer Mesh Chair",
+    "brand": "Fantech",
+    "category": "Chairs",
+    "description": "Illustrative demo chairs product selected for performance-focused gaming setups.",
+    "price": 5790,
+    "originalPrice": null,
+    "image": "/images/05_Gaming_Chairs/15_Racer_Mesh_Chair.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Chairs category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 16,
+    "name": "DualSense Controller",
+    "brand": "Sony",
+    "category": "Controllers",
+    "description": "Illustrative demo controllers product selected for performance-focused gaming setups.",
+    "price": 4290,
+    "originalPrice": 5362,
+    "image": "/images/06_Controllers/16_DualSense_Controller.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Controllers category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 17,
+    "name": "Xbox Wireless Controller",
+    "brand": "Microsoft",
+    "category": "Controllers",
+    "description": "Illustrative demo controllers product selected for performance-focused gaming setups.",
+    "price": 3890,
+    "originalPrice": null,
+    "image": "/images/06_Controllers/17_Xbox_Wireless_Controller.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Controllers category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 18,
+    "name": "Stratus+ Mobile",
+    "brand": "SteelSeries",
+    "category": "Controllers",
+    "description": "Illustrative demo controllers product selected for performance-focused gaming setups.",
+    "price": 3290,
+    "originalPrice": null,
+    "image": "/images/06_Controllers/18_Stratus_Plus_Mobile.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Controllers category"
+    ],
+    "featured": false,
+    "newArrival": false,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 19,
+    "name": "QuadCast S",
+    "brand": "HyperX",
+    "category": "Microphones",
+    "description": "Illustrative demo microphones product selected for performance-focused gaming setups.",
+    "price": 7490,
+    "originalPrice": 9362,
+    "image": "/images/07_Microphones_Streaming/19_QuadCast_S.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Microphones category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 20,
+    "name": "Seiren Mini",
+    "brand": "Razer",
+    "category": "Microphones",
+    "description": "Illustrative demo microphones product selected for performance-focused gaming setups.",
+    "price": 2490,
+    "originalPrice": null,
+    "image": "/images/07_Microphones_Streaming/20_Seiren_Mini.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Microphones category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 21,
+    "name": "Wave:3 USB Mic",
+    "brand": "Elgato",
+    "category": "Microphones",
+    "description": "Illustrative demo microphones product selected for performance-focused gaming setups.",
+    "price": 8290,
+    "originalPrice": null,
+    "image": "/images/07_Microphones_Streaming/21_Wave_3_USB_Mic.png",
+    "availability": "Low stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Microphones category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 22,
+    "name": "QCK Edge XL",
+    "brand": "SteelSeries",
+    "category": "Mousepads",
+    "description": "Illustrative demo mousepads product selected for performance-focused gaming setups.",
+    "price": 1490,
+    "originalPrice": 1862,
+    "image": "/images/08_Mousepads/22_QCK_Edge_XL.png",
+    "availability": "Pre-order",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mousepads category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 23,
+    "name": "Gigantus V2 XXL",
+    "brand": "Razer",
+    "category": "Mousepads",
+    "description": "Illustrative demo mousepads product selected for performance-focused gaming setups.",
+    "price": 1390,
+    "originalPrice": null,
+    "image": "/images/08_Mousepads/23_Gigantus_V2_XXL.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mousepads category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 24,
+    "name": "MP511 Extended",
+    "brand": "Cooler Master",
+    "category": "Mousepads",
+    "description": "Illustrative demo mousepads product selected for performance-focused gaming setups.",
+    "price": 1190,
+    "originalPrice": null,
+    "image": "/images/08_Mousepads/24_MP511_Extended.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Mousepads category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 25,
+    "name": "ROG Strix RTX 4060",
+    "brand": "ASUS",
+    "category": "PC Components",
+    "description": "Illustrative demo pc components product selected for performance-focused gaming setups.",
+    "price": 24990,
+    "originalPrice": 31238,
+    "image": "/images/09_PC_Components/25_ROG_Strix_RTX_4060.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "PC Components category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 26,
+    "name": "Vengeance 32GB DDR5",
+    "brand": "Corsair",
+    "category": "PC Components",
+    "description": "Illustrative demo pc components product selected for performance-focused gaming setups.",
+    "price": 6490,
+    "originalPrice": null,
+    "image": "/images/09_PC_Components/26_Vengeance_32GB_DDR5.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "PC Components category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 27,
+    "name": "980 Pro 1TB NVMe",
+    "brand": "Samsung",
+    "category": "PC Components",
+    "description": "Illustrative demo pc components product selected for performance-focused gaming setups.",
+    "price": 5890,
+    "originalPrice": null,
+    "image": "/images/09_PC_Components/27_980_Pro_1TB_NVMe.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "PC Components category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 28,
+    "name": "Stream Deck Neo",
+    "brand": "Elgato",
+    "category": "Accessories",
+    "description": "Illustrative demo accessories product selected for performance-focused gaming setups.",
+    "price": 5990,
+    "originalPrice": 7488,
+    "image": "/images/10_Accessories/28_Stream_Deck_Neo.png",
+    "availability": "Low stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Accessories category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": true,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 29,
+    "name": "USB-C Gear Hub",
+    "brand": "Syndicate Lab",
+    "category": "Accessories",
+    "description": "Illustrative demo accessories product selected for performance-focused gaming setups.",
+    "price": 1890,
+    "originalPrice": null,
+    "image": "/images/10_Accessories/29_USB_C_Gear_Hub.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Accessories category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  },
+  {
+    "id": 30,
+    "name": "Paracord Cable Kit",
+    "brand": "Syndicate Lab",
+    "category": "Accessories",
+    "description": "Illustrative demo accessories product selected for performance-focused gaming setups.",
+    "price": 690,
+    "originalPrice": null,
+    "image": "/images/10_Accessories/30_Paracord_Cable_Kit.png",
+    "availability": "In stock",
+    "specifications": [
+      "Demo specification set",
+      "Setup-ready design",
+      "Accessories category"
+    ],
+    "featured": false,
+    "newArrival": true,
+    "promotionEligible": false,
+    "warranty": "Illustrative 1-year limited warranty policy"
+  }
+]
